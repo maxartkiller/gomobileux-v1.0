@@ -1,0 +1,26 @@
+<div class="wrapper">
+        <div class="header">
+            <div class="row no-gutters">
+                <div class="col-auto">
+                    <a class="btn btn-link" routerLink="/dashboard"  [routerLinkActive]="['active']"><i class="material-icons">keyboard_arrow_left</i></a>
+                </div>
+                <div class="col text-center"><img src="assets/images/logo-header.png" alt="" class="header-logo"></div>
+                <div class="col-auto">
+                    <a href="/profile" class="btn  btn-link text-dark"><i class="material-icons">account_circle</i></a>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-10 mx-auto text-center">
+                    <br>
+                    <br>
+                    <h1 class="my-4">Access Denied</h1>
+                    <h5>You are not authorised</h5>
+                    <p class="text-secondary">Please contact you administor or service provider.</p>
+                    <br>
+                    <a class="btn btn-default btn-rounded shadow-sm" routerLink="/dashboard"  [routerLinkActive]="['active']">Go to dashboard <i class="material-icons md-18">arrow_forward</i></a>
+                </div>
+            </div>
+        </div>
+    </div>

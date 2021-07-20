@@ -1,0 +1,23 @@
+<app-sidebar
+    (collapsedEvent)="receiveCollapsed($event)"
+    class="sidebar"
+></app-sidebar>
+
+<!-- wrapper starts -->
+<div class="wrapper" (click)="toggleSidebar()">
+    <app-header
+        class="container-fluid header"
+        id="header-container"
+    ></app-header>
+
+    <div class="container-fluid">
+        <div class="row">
+            <!-- page content here -->
+            <router-outlet></router-outlet>
+            <!-- page content ends -->
+        </div>
+    </div>
+
+    <app-footer class="footer"></app-footer>
+</div>
+<!-- wrapper ends -->

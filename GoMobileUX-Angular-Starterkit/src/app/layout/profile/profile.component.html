@@ -1,0 +1,161 @@
+<div [@routerTransition]>
+    <div class="container">
+        <div class="text-center">
+            <div class="figure-profile shadow my-4">
+                <figure><img src="assets/images/user1.png" alt=""></figure>
+            </div>
+            <h3 class="mb-1 ">Ammy Jahnson</h3>
+            <p class="text-secondary">Sydney, Australia</p>
+        </div>
+        <br>
+        <div class="card mb-4 border-0 shadow-sm">
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-auto">
+                        <span class="btn btn-default p-3 btn-rounded-15">
+                            <i class="material-icons">account_balance_wallet</i>
+                        </span>
+                    </div>
+                    <div class="col pl-0">
+                        <p class="text-secondary mb-1">Balance Available</p>
+                        <h4 class="text-dark my-0">$2585</h4>
+                    </div>
+                    <div class="col-auto pl-0 align-self-center">
+                        <button class="btn btn-default button-rounded-36 shadow"><i class="material-icons">add</i></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <ngb-tabset>            
+            <ngb-tab id="nav-tabContent">
+                <ng-template ngbTabTitle>
+                    <div class="row">
+                        <div class="col-auto align-self-center pr-1">
+                            <span class="btn btn-success button-rounded-26">
+                                <i class="material-icons md-18 text-mute">card_giftcard</i>
+                            </span>
+                        </div>
+                        <div class="col pl-2">
+                            <p class="text-secondary mb-0 small text-truncate">Today's Delivery</p>
+                            <h6 class="text-dark my-0">4</h6>
+                        </div>
+                    </div>
+                </ng-template>
+                <ng-template ngbTabContent>
+                    <ul class="list-items">
+                        <li>
+                            <div class="row">
+                                <div class="col">Orange 1kg at $ 152.00</div>
+                                <div class="col-auto"><a href="">Track</a></div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="row">
+                                <div class="col">Orange 1kg at $ 152.00</div>
+                                <div class="col-auto"><a href="">Track</a></div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="row">
+                                <div class="col">Orange 1kg at $ 152.00</div>
+                                <div class="col-auto"><a href="">Track</a></div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="row">
+                                <div class="col">Orange 1kg at $ 152.00</div>
+                                <div class="col-auto"><a href="">Track</a></div>
+                            </div>
+                        </li>
+                    </ul>
+                </ng-template>
+            </ngb-tab>
+            <ngb-tab>                
+                <ng-template ngbTabTitle>
+                    <div class="row">
+                        <div class="col-auto align-self-center pr-1">
+                            <span class="btn btn-warning button-rounded-26">
+                                <i class="material-icons md-18 text-mute">payment</i>
+                            </span>
+                        </div>
+                        <div class="col pl-2">
+                            <p class="text-secondary mb-0 small text-truncate">Future Bookings</p>
+                            <h6 class="text-dark my-0">25</h6>
+                        </div>
+                    </div>
+                </ng-template>
+                <ng-template ngbTabContent>            
+                    <ul class="list-items">
+                        <li>
+                            <div class="row">
+                                <div class="col">Apple 2kg at $ 152.00</div>
+                                <div class="col-auto"><a href="">Track</a></div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="row">
+                                <div class="col">Grapes 2kg at $ 152.00</div>
+                                <div class="col-auto"><a href="">Track</a></div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="row">
+                                <div class="col">Mango 2kg at $ 152.00</div>
+                                <div class="col-auto"><a href="">Track</a></div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="row">
+                                <div class="col">Orange 2kg at $ 152.00</div>
+                                <div class="col-auto"><a href="">Track</a></div>
+                            </div>
+                        </li>
+                    </ul>
+                </ng-template>
+            </ngb-tab>
+        </ngb-tabset>
+
+        <h6 class="subtitle">Friends</h6>
+        <div class="row mb-4">
+            <div class="col-12">
+                <figure class="avatar avatar-50">
+                    <img src="assets/images/user2.png" alt="">
+                </figure>
+                <figure class="avatar avatar-50">
+                    <img src="assets/images/user3.png" alt="">
+                </figure>
+                <figure class="avatar avatar-50">
+                    <img src="assets/images/user4.png" alt="">
+                </figure>
+                <figure class="avatar avatar-50">
+                    <img src="assets/images/user1.png" alt="">
+                </figure>
+                <div class="avatar avatar-50">
+                    <a class="d-block" href="">
+                        <h5 class="text-template mb-0">46</h5>
+                        <p class="small d-block text-secondary">More</p>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <h6 class="subtitle">Contact Information</h6>
+        <dl class="row mb-4">
+            <dt class="col-3 text-secondary font-weight-normal">Email</dt>
+            <dd class="col-9">ammyjohnson@maxartkiller.com</dd>
+            <dt class="col-3 text-secondary font-weight-normal">Phone</dt>
+            <dd class="col-9">55 5555 555555 55</dd>
+        </dl>
+
+        <h6 class="subtitle">Address</h6>
+        <p class="mb-4">58, Lajpat Nagar,<br>
+            Holand Street four,<br>
+            Sydney - 25468<br>
+            Australia
+        </p>
+        
+        <a href="/profile-edit" class="btn btn-lg btn-dark text-white btn-block btn-rounded shadow"><span>Edit Profile</span><i class="material-icons">arrow_forward</i></a>
+        <br>
+    </div>
+</div>

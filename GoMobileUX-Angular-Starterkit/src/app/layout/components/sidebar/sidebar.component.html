@@ -1,0 +1,49 @@
+<div class="text-center">
+        <div class="figure-menu shadow">
+            <figure><img src="assets/images/user1.png" alt=""></figure>
+        </div>
+        <h5 class="mb-1 ">Ammy Jahnson</h5>
+        <p class="text-mute small">Sydney, Australia</p>
+    </div>
+    <br>
+    <div class="row mx-0">
+        <div class="col">
+            <div class="card mb-3 border-0 shadow-sm bg-template-light">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col">
+                            <p class="text-secondary small mb-0">Balance Available</p>
+                            <h6 class="text-dark my-0">$2585.00</h6>
+                        </div>
+                        <div class="col-auto">
+                            <button class="btn btn-default button-rounded-36 shadow"><i class="material-icons">add</i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <h5 class="subtitle text-uppercase"><span>Menu</span></h5>
+    
+            <!-- Navigation menu sidebar -->
+            <div class="list-group main-menu">
+                <a routerLink="/not-found"  [routerLinkActive]="['active']" class="list-group-item list-group-item-action" (click)="toggleSidebar()">404</a>
+                <a routerLink="/access-denied"  [routerLinkActive]="['active']" class="list-group-item list-group-item-action" (click)="toggleSidebar()">Access Denied</a>
+                <a routerLink="/error"  [routerLinkActive]="['active']" class="list-group-item list-group-item-action" (click)="toggleSidebar()">Under Construction</a>
+                <a routerLink="/signup"  [routerLinkActive]="['active']" class="list-group-item list-group-item-action" (click)="toggleSidebar()">Register</a>
+                <br>
+                <hr>
+                <br>
+                <a routerLink="/store"  [routerLinkActive]="['active']" class="list-group-item list-group-item-action"  (click)="toggleSidebar()">Store</a>
+                <a routerLink="/notification"  [routerLinkActive]="['active']" class="list-group-item list-group-item-action"  (click)="toggleSidebar()">Notification <span class="badge badge-dark text-white">2</span></a>
+                <a routerLink="/products"  [routerLinkActive]="['active']" class="list-group-item list-group-item-action"  (click)="toggleSidebar()">All Products</a>
+                <a routerLink="/orders"  [routerLinkActive]="['active']" class="list-group-item list-group-item-action"  (click)="toggleSidebar()">My Order</a>
+                <a routerLink="/profile"  [routerLinkActive]="['active']" class="list-group-item list-group-item-action" (click)="toggleSidebar()">My Profile</a>            
+                <a routerLink="/setting"  [routerLinkActive]="['active']" class="list-group-item list-group-item-action" (click)="toggleSidebar()">Settings</a>
+                <hr>
+    
+                <a routerLink="/login"  [routerLinkActive]="['active']" class="list-group-item list-group-item-action mt-4" (click)="toggleSidebar()">Logout</a>
+            </div>
+            <!-- Navigation menu sidebar -->
+        </div>
+    </div>
+    
+    

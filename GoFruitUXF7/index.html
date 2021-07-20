@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en" class="color-theme-pink">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, viewport-fit=cover">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="theme-color" content="#2196f3">
+    <meta http-equiv="Content-Security-Policy" content="default-src * 'self' 'unsafe-inline' 'unsafe-eval' data: gap:">
+    <title>GoMobileUX</title>
+    <link rel="stylesheet" href="css/framework7.bundle.min.css">
+    <link rel="stylesheet" href="css/app.css">
+    <link rel="apple-touch-icon" href="img/gomobileux-icon-square.png">
+    <link rel="icon" href="img/gomobileux-icon.png">
+</head>
+
+<body>
+    <div id="app">
+        <!-- Statusbar overlay element -->
+        <div class="statusbar"></div>
+        <div class="panel panel-left panel-reveal panel-resizable panel-init color-white">
+            <div class="page">
+                <div class="page-content">
+                    <div class="block">
+                        <div class="text-align-center">
+                            <div class="figure-menu shadow">
+                                <figure><img src="img/user1.png" alt=""></figure>
+                            </div>
+                            <h5 class="margin-top ">Ammy Jahnson</h5>
+                            <p class="text-mute small no-margin">Sydney, Australia</p>
+                        </div>
+                    </div>
+                    <div class="block">
+                        <div class="card light-white text-dark no-margin">
+                            <div class="card-content card-content card-content-padding">
+                                <div class="row">
+                                    <div class="col-70">
+                                        <p class="text-secondary small no-margin">Balance Available</p>
+                                        <h6 class="text-dark no-margin">$2585.00</h6>
+                                    </div>
+                                    <div class="col-30">
+                                        <button class="button button-raised button-round button-fill color-pink"><i class="material-icons">add</i></button>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="block-title caps"><span class=" color-white">Menu</span></div>
+                    <div class="list links-list nav-list">
+                        <ul>
+                            <li>
+                                <a href="/homepage/" class="panel-close">Store</a>
+                            </li>
+                            <li>
+                                <a href="/notications/" class="panel-close">Notification <span class="badge color-black">2</span></a>
+                            </li>
+                            <li>
+                                <a href="/allproducts/" class="panel-close">All Products</a>
+                            </li>
+                            <li>
+                                <a href="/myorders/" class="panel-close">My Order</a>
+                            </li>
+                            <li>
+                                <a href="/myprofile/" class="panel-close">My Profile</a>
+                            </li>
+                            <li>
+                                <a href="/setting/" class="panel-close">Setting</a>
+                            </li>
+                            <li>
+                                <a href="/framework/" class="panel-close">F7 Controls</a>
+                            </li>
+                            <li>
+                                <a href="/color-themes/" class="panel-close">Color Themes</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="list links-list nav-list">
+                        <ul>
+                            <li>
+                                <a href="/signin/" class="panel-close">Logout</a>
+                            </li>
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="view view-main view-init safe-areas" data-master-detail-breakpoint="800" data-url="/">
+            <div class="row no-gutters vh-100 loader-screen">
+                <div class="col align-self-center text-white text-align-center">
+                    <img src="img/logo.png" alt="logo">
+                    <h1><span class="font-weight-light">Go</span>Fruit</h1>
+                    <div class="laoderhorizontal">
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                    </div>
+                </div>
+            </div>
+            <div class="page page-home" data-name="home">
+                <div class="page-content">
+                    <div data-pagination='{"el": ".swiper-pagination", "hideOnClick": true}' class="swiper-container swiper-init demo-swiper">
+                        <div class="swiper-pagination"></div>
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide bg-orange">
+                                <img src="img/orange-slices.png" alt="" class="orange-slice right-image align-self-center">
+                                <div class="row">
+                                    <div class="color-white col-50 padding-left">
+                                        <h1 class="text-uppercase">Other Controls Elements</h1>
+                                        <p>Click on Menu button &gt; Side menu and select other controls</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide bg-success">
+                                <img src="img/pineapple.png" alt="" class="pinapple right-image align-self-center">
+                                <div class="row">
+                                    <div class="color-white col-50 padding-left">
+                                        <h1 class="text-uppercase">Testy Awesome Fruits</h1>
+                                        <p>Lorem ipsum dolor sit amet, consect etur adipiscing elit. Sndisse conv allis.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide bg-warning">
+                                <img src="img/banana.png" alt="" class="banana right-image align-self-center">
+                                <div class="row">
+                                    <div class="color-white col-50 padding-left">
+                                        <h1 class="text-uppercase">Loving Freshness Everyday</h1>
+                                        <p>Lorem ipsum dolor sit amet, consect etur adipiscing elit. Sndisse conv allis.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="fab fab-right-bottom">
+                        <a href="/signin/" class="button button-raised button-round button-rounded-54 color-pink"><i class="material-icons">arrow_forward</i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="js/framework7.bundle.min.js"></script>
+
+    <script src="js/chartjs/Chart.min.js"></script>
+    <script src="js/chartjs/utils.js"></script>
+
+    <script src="js/routes.js"></script>
+    <script src="js/app.js"></script>
+
+</body>
+
+</html>

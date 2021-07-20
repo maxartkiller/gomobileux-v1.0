@@ -1,0 +1,545 @@
+<div [@routerTransition]>
+        <div class="container">
+                <input type="text" class="form-control form-control-lg search my-3" placeholder="Search">
+    
+                <div class="subtitle h6 mb-3">
+                    <div class="d-inline-block">
+                        This Month<br>
+                        <p class="small text-mute">1/07/2019 - 28-07-2019</p>
+                    </div>
+                </div>
+                <div class="card mb-4 border-0 shadow-sm">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-auto">
+                                <span class="btn btn-default p-3">
+                                    <i class="material-icons">account_balance_wallet</i>
+                                </span>
+                            </div>
+                            <div class="col pl-0">
+                                <p class="text-secondary mb-0">Balance Available</p>
+                                <h3 class="text-dark my-0">$2585.00</h3>
+                            </div>
+                            <div class="col-auto">
+                                <button class="btn btn-default button-rounded-54 shadow"><i class="material-icons">add</i></button>
+                            </div>
+                        </div>
+                        <div class="row mt-4">
+                            <div class="col-12">
+                                <canvas baseChart [datasets]="barchartsData" [labels]="barchartsLabels" [options]="barchartsOptions" [legend]="barchartsLegend" [chartType]="barchartsType" (chartHover)="chartHovered($event)" (chartClick)="chartClicked($event)"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="row">
+                    <div class="col-6">
+                        <div class="card mb-3 border-0 shadow-sm">
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-auto align-self-center pr-1">
+                                        <span class="btn btn-success button-rounded-26">
+                                            <i class="material-icons md-18 text-mute">card_giftcard</i>
+                                        </span>
+                                    </div>
+                                    <div class="col pl-1">
+                                        <p class="text-secondary mb-0 small">Total Saving</p>
+                                        <h6 class="text-dark my-0">$585.00</h6>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="card mb-3 border-0 shadow-sm">
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-auto align-self-center pr-1">
+                                        <span class="btn btn-warning button-rounded-26">
+                                            <i class="material-icons md-18 text-mute">payment</i>
+                                        </span>
+                                    </div>
+                                    <div class="col pl-1">
+                                        <p class="text-secondary mb-0 small">Expense</p>
+                                        <h6 class="text-dark my-0">$1585.00</h6>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+    
+                <h6 class="subtitle">Categories</h6>
+                <div class="row">
+                    <!-- Swiper -->
+                    <div class="swiper-container small-slide overflow-hidden" [swiper]="configurations">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <div class="card shadow-sm border-0">
+                                    <div class="card-body">
+                                        <div class="row no-gutters h-100">
+                                            <img
+                                                src="assets/images/orange.png"
+                                                alt=""
+                                                class="small-slide-right"
+                                            />
+                                            <div class="col-8">
+                                                <button class="btn btn-sm btn-link p-0">
+                                                    <i class="material-icons md-18"
+                                                        >favorite_outline</i
+                                                    >
+                                                </button>
+                                                <a
+                                                    href="all-products.html"
+                                                    class="text-dark mb-1 mt-2 h6 d-block"
+                                                    >Citrus
+                                                </a>
+                                                <p class="text-secondary small">
+                                                    Oranges, Grapefruit, Mandarins
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="card shadow-sm border-0">
+                                    <div class="card-body">
+                                        <div class="row no-gutters h-100">
+                                            <img
+                                                src="assets/images/banana-small.png"
+                                                alt=""
+                                                class="small-slide-right"
+                                            />
+                                            <div class="col-8">
+                                                <button class="btn btn-sm btn-link p-0">
+                                                    <i class="material-icons md-18"
+                                                        >favorite</i
+                                                    >
+                                                </button>
+                                                <a
+                                                    href="all-products.html"
+                                                    class="text-dark mb-1 mt-2 h6 d-block"
+                                                    >Tropical
+                                                </a>
+                                                <p class="text-secondary small">
+                                                    Bananas, Mangoes
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="card shadow-sm border-0">
+                                    <div class="card-body">
+                                        <div class="row no-gutters h-100">
+                                            <img
+                                                src="assets/images/grapes.png"
+                                                alt=""
+                                                class="small-slide-right"
+                                            />
+                                            <div class="col-9">
+                                                <button class="btn btn-sm btn-link p-0">
+                                                    <i class="material-icons md-18"
+                                                        >favorite_outline</i
+                                                    >
+                                                </button>
+                                                <a
+                                                    href="all-products.html"
+                                                    class="text-dark mb-1 mt-2 h6 d-block"
+                                                    >Berries</a
+                                                >
+                                                <p class="text-secondary small">
+                                                    Strawberries, Raspberries,
+                                                    Blueberries
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="card shadow-sm border-0">
+                                    <div class="card-body">
+                                        <div class="row no-gutters h-100">
+                                            <img
+                                                src="assets/images/orange.png"
+                                                alt=""
+                                                class="small-slide-right"
+                                            />
+                                            <div class="col-8">
+                                                <button class="btn btn-sm btn-link p-0">
+                                                    <i class="material-icons md-18"
+                                                        >favorite_outline</i
+                                                    >
+                                                </button>
+                                                <a
+                                                    href="all-products.html"
+                                                    class="text-dark mb-1 mt-2 h6 d-block"
+                                                    >Citrus
+                                                </a>
+                                                <p class="text-secondary small">
+                                                    Oranges, Grapefruit, Mandarins
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="card shadow-sm border-0">
+                                    <div class="card-body">
+                                        <div class="row no-gutters h-100">
+                                            <img
+                                                src="assets/images/banana-small.png"
+                                                alt=""
+                                                class="small-slide-right"
+                                            />
+                                            <div class="col-8">
+                                                <button class="btn btn-sm btn-link p-0">
+                                                    <i class="material-icons md-18"
+                                                        >favorite</i
+                                                    >
+                                                </button>
+                                                <a
+                                                    href="all-products.html"
+                                                    class="text-dark mb-1 mt-2 h6 d-block"
+                                                    >Tropical
+                                                </a>
+                                                <p class="text-secondary small">
+                                                    Bananas, Mangoes
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="card shadow-sm border-0">
+                                    <div class="card-body">
+                                        <div class="row no-gutters h-100">
+                                            <img
+                                                src="assets/images/grapes.png"
+                                                alt=""
+                                                class="small-slide-right"
+                                            />
+                                            <div class="col-9">
+                                                <button class="btn btn-sm btn-link p-0">
+                                                    <i class="material-icons md-18"
+                                                        >favorite_outline</i
+                                                    >
+                                                </button>
+                                                <a
+                                                    href="all-products.html"
+                                                    class="text-dark mb-1 mt-2 h6 d-block"
+                                                    >Berries</a
+                                                >
+                                                <p class="text-secondary small">
+                                                    Strawberries, Raspberries,
+                                                    Blueberries
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="card shadow-sm border-0">
+                                    <div class="card-body">
+                                        <div class="row no-gutters h-100">
+                                            <img
+                                                src="assets/images/orange.png"
+                                                alt=""
+                                                class="small-slide-right"
+                                            />
+                                            <div class="col-8">
+                                                <button class="btn btn-sm btn-link p-0">
+                                                    <i class="material-icons md-18"
+                                                        >favorite_outline</i
+                                                    >
+                                                </button>
+                                                <a
+                                                    href="all-products.html"
+                                                    class="text-dark mb-1 mt-2 h6 d-block"
+                                                    >Citrus
+                                                </a>
+                                                <p class="text-secondary small">
+                                                    Oranges, Grapefruit, Mandarins
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="card shadow-sm border-0">
+                                    <div class="card-body">
+                                        <div class="row no-gutters h-100">
+                                            <img
+                                                src="assets/images/banana-small.png"
+                                                alt=""
+                                                class="small-slide-right"
+                                            />
+                                            <div class="col-8">
+                                                <button class="btn btn-sm btn-link p-0">
+                                                    <i class="material-icons md-18"
+                                                        >favorite</i
+                                                    >
+                                                </button>
+                                                <a
+                                                    href="all-products.html"
+                                                    class="text-dark mb-1 mt-2 h6 d-block"
+                                                    >Tropical
+                                                </a>
+                                                <p class="text-secondary small">
+                                                    Bananas, Mangoes
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="card shadow-sm border-0">
+                                    <div class="card-body">
+                                        <div class="row no-gutters h-100">
+                                            <img
+                                                src="assets/images/grapes.png"
+                                                alt=""
+                                                class="small-slide-right"
+                                            />
+                                            <div class="col-9">
+                                                <button class="btn btn-sm btn-link p-0">
+                                                    <i class="material-icons md-18"
+                                                        >favorite_outline</i
+                                                    >
+                                                </button>
+                                                <a
+                                                    href="all-products.html"
+                                                    class="text-dark mb-1 mt-2 h6 d-block"
+                                                    >Berries</a
+                                                >
+                                                <p class="text-secondary small">
+                                                    Strawberries, Raspberries,
+                                                    Blueberries
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+    
+                <h6 class="subtitle">Product Budget</h6>
+                <div class="row">
+                    <div class="col-12 col-md-6 col-lg-4">
+                        <div class="card shadow-sm border-0 mb-4">
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-2 col-sm-3 col-md-4 col-lg-3 pr-0 align-self-center">
+                                        <figure class="product-image my-0"><img src="assets/images/apple.png" alt="" class=""></figure>
+                                    </div>
+                                    <div class="col align-self-center">
+                                        <div class="text-dark mb-1 h6 d-block">Red Apple
+                                            <div class="float-right">
+                                                <div class="badge badge-success d-inline-block ml-2"><small>10% off</small></div>
+                                                <span class="text-secondary small text-mute mb-0 ml-2">1.0 kg</span>
+                                            </div>
+                                        </div>
+                                        <div class="progress progress-sm mt-2">
+                                            <div class="progress-bar bg-danger" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-4">
+                        <div class="card shadow-sm border-0 mb-4">
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-2 col-sm-3 col-md-4 col-lg-3 pr-0 align-self-center">
+                                        <figure class="product-image my-0"><img src="assets/images/grapes2.png" alt="" class=""></figure>
+                                    </div>
+                                    <div class="col align-self-center">
+                                        <div class="text-dark mb-1 h6 d-block">Green Grapes
+                                            <div class="float-right">
+                                                <div class="badge badge-success d-inline-block ml-2"><small>15% off</small></div>
+                                                <span class="text-secondary small text-mute mb-0 ml-2">1.0 kg</span>
+                                            </div>
+                                        </div>
+                                        <div class="progress progress-sm mt-2">
+                                            <div class="progress-bar bg-success" role="progressbar" style="width: 35%" aria-valuenow="35" aria-valuemin="0" aria-valuemax="100"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-4">
+                        <div class="card shadow-sm border-0 mb-4">
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-2 col-sm-3 col-md-4 col-lg-3 pr-0 align-self-center">
+                                        <figure class="product-image my-0"><img src="assets/images/orange-2.png" alt="" class=""></figure>
+                                    </div>
+                                    <div class="col align-self-center">
+                                        <div class="text-dark mb-1 h6 d-block">Orange
+                                            <div class="float-right">
+                                                <div class="badge badge-success d-inline-block ml-2"><small>15% off</small></div>
+                                                <span class="text-secondary small text-mute mb-0 ml-2">1.0 kg</span>
+                                            </div>
+                                        </div>
+                                        <div class="progress progress-sm mt-2">
+                                            <div class="progress-bar bg-warning" role="progressbar" style="width: 60%" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <h6 class="subtitle">News Updates</h6>
+                <div class="row">
+                    <!-- Swiper -->
+                    <div class="swiper-container news-slide  overflow-hidden"  [swiper]="configurations2">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+                                    <div class="card shadow-sm border-0 bg-dark text-white">
+                                        <figure class="background" style="background-image: url('assets/images/fresh-orange-juice.jpg');"></figure>
+                                        <div class="card-body">
+                                            <a
+                                                href=""
+                                                class="btn btn-default button-rounded-36 shadow-sm float-bottom-right"
+                                                ><i class="material-icons md-18"
+                                                    >arrow_forward</i
+                                                ></a
+                                            >
+                                            <h5 class="small">
+                                                Multipurpose Juice allows you to grow faster
+                                            </h5>
+                                            <p class="text-mute small">By Anand Mangal</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="card shadow-sm border-0 bg-dark text-white">
+                                        <figure class="background" style="background-image: url('assets/images/orange-juice.jpg');"></figure>
+                                        <div class="card-body">
+                                            <a
+                                                href=""
+                                                class="btn btn-default button-rounded-36 shadow-sm float-bottom-right"
+                                                ><i class="material-icons md-18"
+                                                    >arrow_forward</i
+                                                ></a
+                                            >
+                                            <h5 class="small">
+                                                Multipurpose Juice allows you to grow faster
+                                            </h5>
+                                            <p class="text-mute small">By Anand Mangal</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="card shadow-sm border-0 bg-dark text-white">
+                                        <figure class="background"  style="background-image: url('assets/images/fresh-orange-juice.jpg');"></figure>
+                                        <div class="card-body">
+                                            <a
+                                                href=""
+                                                class="btn btn-default button-rounded-36 shadow-sm float-bottom-right"
+                                                ><i class="material-icons md-18"
+                                                    >arrow_forward</i
+                                                ></a
+                                            >
+                                            <h5 class="small">
+                                                Multipurpose Juice allows you to grow faster
+                                            </h5>
+                                            <p class="text-mute small">By Anand Mangal</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="card shadow-sm border-0 bg-dark text-white">
+                                        <figure class="background"  style="background-image: url('assets/images/orange-juice.jpg');"></figure>
+                                        <div class="card-body">
+                                            <a
+                                                href=""
+                                                class="btn btn-default button-rounded-36 shadow-sm float-bottom-right"
+                                                ><i class="material-icons md-18"
+                                                    >arrow_forward</i
+                                                ></a
+                                            >
+                                            <h5 class="small">
+                                                Multipurpose Juice allows you to grow faster
+                                            </h5>
+                                            <p class="text-mute small">By Anand Mangal</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="card shadow-sm border-0 bg-dark text-white">
+                                        <figure class="background"  style="background-image: url('assets/images/fresh-orange-juice.jpg');"></figure>
+                                        <div class="card-body">
+                                            <a
+                                                href=""
+                                                class="btn btn-default button-rounded-36 shadow-sm float-bottom-right"
+                                                ><i class="material-icons md-18"
+                                                    >arrow_forward</i
+                                                ></a
+                                            >
+                                            <h5 class="small">
+                                                Multipurpose Juice allows you to grow faster
+                                            </h5>
+                                            <p class="text-mute small">By Anand Mangal</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="card shadow-sm border-0 bg-dark text-white">
+                                        <figure class="background" style="background-image: url('assets/images/orange-juice.jpg');"></figure>
+                                        <div class="card-body">
+                                            <a
+                                                href=""
+                                                class="btn btn-default button-rounded-36 shadow-sm float-bottom-right"
+                                                ><i class="material-icons md-18"
+                                                    >arrow_forward</i
+                                                ></a
+                                            >
+                                            <h5 class="small">
+                                                Multipurpose Juice allows you to grow faster
+                                            </h5>
+                                            <p class="text-mute small">By Anand Mangal</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Add Pagination -->
+                            <div class="swiper-pagination"></div>
+                        </div>
+                </div>
+            </div>
+            <div class="container-fluid bg-success text-white mb-3">
+                <div class="row">
+                    <div class="container">
+                        <div class="row  py-4 ">
+                            <div class="col">
+                                <h1 class="text-uppercase mb-3">20% OFF Season Sale</h1>
+                                <p class="mb-3">Use Coupan Code<br><span class="text-dark">DFR0020</span></p>
+                            </div>
+                            <div class="col-5 col-md-3 col-lg-2 col-xl-2">
+                                <img src="assets/images/orange-small.png" alt="" class="mw-100 mt-3">
+                            </div>
+                            <div class="w-100"></div>
+                            <div class="col">
+                                <p>Get the all new fresh bananas at very low price</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+</div>

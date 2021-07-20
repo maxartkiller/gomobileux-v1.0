@@ -1,0 +1,65 @@
+<div class="introduction-page" [@routerTransition]>
+    <a [routerLinkActive]="['active']" routerLink="/login" class="btn btn-default button-rounded-54 shadow text-white float-bottom-right">
+        <i class="material-icons">arrow_forward</i>
+    </a>
+
+    <div class="swiper-container introduction vh-100" [swiper]="configurations">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide overflow-hidden bg-orange text-white">
+                    <div class="row no-gutters h-100">
+                        <img src="assets/images/orange-slices.png" alt="" class="orange-slice right-image align-self-center">
+                        <div class="col align-self-center px-3">
+                            <div class="row">
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="col-6 text-left">
+                                            <h1 class="text-uppercase">Other Controls Elements</h1>
+                                            <p>Click on Menu button > Side menu and select other controls</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+    
+                    </div>
+                </div>
+                <div class="swiper-slide overflow-hidden bg-success text-white">
+                    <div class="row no-gutters h-100">
+                        <img src="assets/images/pineapple.png" alt="" class="pinapple right-image align-self-center">
+                        <div class="col align-self-center px-3">
+                            <div class="row">
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="col-6 text-left">
+                                            <h1 class="text-uppercase">Testy Awesome Fruits</h1>
+                                            <p>SLorem ipsum dolor sit amet, consect etur adipiscing elit. Sndisse conv allis.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide overflow-hidden bg-warning text-white">
+                    <div class="row no-gutters h-100">
+                        <img src="assets/images/banana.png" alt="" class="banana right-image align-self-center">
+                        <div class="col align-self-center px-3">
+                            <div class="row">
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="col-6 text-left">
+                                            <h1 class="text-uppercase">Loving Freshness Everyday</h1>
+                                            <p>SLorem ipsum dolor sit amet, consect etur adipiscing elit. Sndisse conv allis.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Add Pagination -->
+            <div class="swiper-pagination"></div>
+        </div>
+
+</div>

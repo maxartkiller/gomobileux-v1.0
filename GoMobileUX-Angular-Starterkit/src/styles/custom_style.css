@@ -1,0 +1,95 @@
+.dropdown-menu.dropdown-menu-right{
+    right: 0;
+    left:auto !important ;
+}
+
+.charttab > ul.nav-tabs{
+    display: none;
+}
+
+html{
+    height: 100%;
+}
+body{
+    height: 100%;
+}
+body app-root{
+    height: 100%;
+    position: relative;
+}
+body app-layout{
+    height: 100%;
+    position: relative;
+}
+.sidebar{
+    position: fixed;
+    z-index: 9;
+}
+.sidemenu-open{
+    overflow: hidden;
+}
+.sidemenu-open app-layout{
+    overflow: hidden;
+}
+.small-slide .swiper-slide {
+    max-width: 165px !important;
+}
+.swiper-wrapper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-transition-property: -webkit-transform;
+    transition-property: -webkit-transform;
+    -o-transition-property: transform;
+    transition-property: transform;
+    transition-property: transform,-webkit-transform;
+    -webkit-box-sizing: content-box;
+    box-sizing: content-box;
+}
+.swiper-slide {
+    -webkit-flex-shrink: 0;
+    -ms-flex-negative: 0;
+    flex-shrink: 0;
+    height: 100%;
+    position: relative;
+    -webkit-transition-property: -webkit-transform;
+    transition-property: -webkit-transform;
+    -o-transition-property: transform;
+    transition-property: transform;
+    transition-property: transform,-webkit-transform;
+}
+
+.swiper-pagination {
+    position: absolute;
+    text-align: center;
+    -webkit-transition: .3s opacity;
+    -o-transition: .3s opacity;
+    transition: .3s opacity;
+    -webkit-transform: translate3d(0,0,0);
+    transform: translate3d(0,0,0);
+    z-index: 10;
+}
+.swiper-container-horizontal>.swiper-pagination-bullets, .swiper-pagination-custom, .swiper-pagination-fraction {    
+    width: 100%;
+    left: 0;
+}
+.swiper-pagination-bullet {
+    width: 8px;
+    height: 8px;
+    display: inline-block;
+    border-radius: 100%;
+    background: #000;
+    opacity: .2;
+}
+.swiper-pagination-bullet-active {
+    opacity: 1;
+    background: #000000;
+}
+.swiper-container-horizontal>.swiper-pagination-bullets .swiper-pagination-bullet {
+    margin: 0 4px;
+}

@@ -1,0 +1,13 @@
+:host ::ng-deep .dropdown-menu-right {
+    right: 0;
+    left: auto;
+}
+
+.summary-small{
+    height: 40px;
+    width: 60px;
+}
+
+:host{
+    width: 100%;
+}
