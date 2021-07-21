@@ -1,0 +1,1401 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <!--
+  Customize this policy to fit your own app's needs. For more guidance, see:
+      https://github.com/apache/cordova-plugin-whitelist/blob/master/README.md#content-security-policy
+  Some notes:
+      * gap: is required only on iOS (when using UIWebView) and is needed for JS->native communication
+      * https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
+      * Disables use of inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
+          * Enable inline JS: add 'unsafe-inline' to default-src
+  -->
+    <meta http-equiv="Content-Security-Policy" content="default-src * 'self' 'unsafe-inline' 'unsafe-eval' data: gap: content:">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui, viewport-fit=cover">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="theme-color" content="#2196f3">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="msapplication-tap-highlight" content="no">
+    <title>GoMobileUX Vue</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="libs/framework7/css/framework7.bundle.min.css">
+    <link rel="stylesheet" href="css/icons.css">
+    <link rel="stylesheet" href="css/app.css">
+    <link rel="apple-touch-icon" href="img/gomobileux-icon-square.png">
+    <link rel="icon" href="img/gomobileux-icon.png">
+</head>
+
+<body class="color-theme-pink">
+    <div id="app">
+        <f7-app :params="f7params">
+            <!-- Statusbar -->
+            <f7-statusbar></f7-statusbar>
+
+            <!-- Left Panel -->
+            <f7-panel left reveal>
+                <f7-view id="left-panel-view" color-theme="pink">
+                    <f7-page>
+                        <f7-block>
+                            <div class="text-align-center">
+                                <div class="figure-menu shadow">
+                                    <figure><img src="img/user1.png" alt=""></figure>
+                                </div>
+                                <h5 class="margin-top ">Ammy Jahnson</h5>
+                                <p class="text-mute small no-margin">Sydney, Australia</p>
+                            </div>
+                        </f7-block>
+                        <f7-block>
+                            <div class="card light-white text-dark no-margin">
+                                <div class="card-content card-content card-content-padding">
+                                    <div class="row">
+                                        <div class="col-70">
+                                            <p class="text-secondary small no-margin">Balance Available</p>
+                                            <h6 class="text-dark no-margin">$2585.00</h6>
+                                        </div>
+                                        <div class="col-30">
+                                            <f7-button fill round color-pink><i class="material-icons">add</i></f7-button>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </f7-block>
+
+                        <f7-block-title class="caps"><span class=" color-white">Menu</span></f7-block-title>
+                        <f7-list class="nav-list">
+                            <f7-list-item link="/home/" title="Store" panel-close></f7-list-item>
+                            <f7-list-item link="/notications/" title="Notification" panel-close></f7-list-item>
+                            <f7-list-item link="/allproducts/" title="All Products" panel-close></f7-list-item>
+                            <f7-list-item link="/myorders/" title="My Order" panel-close></f7-list-item>
+                            <f7-list-item link="/myprofile/" title="My Profile" panel-close></f7-list-item>
+                            <f7-list-item link="/setting/" title="Setting" panel-close></f7-list-item>
+                        </f7-list>
+
+                        <f7-list class="nav-list">
+                            <f7-list-item link="/signin/" title="Logout" panel-close></f7-list-item>
+                        </f7-list>
+
+                    </f7-page>
+                </f7-view>
+            </f7-panel>
+
+            <!-- Right Panel -->
+            <f7-panel right cover>
+                <f7-view id="right-panel-view" color-theme="pink">
+                    <f7-page>
+                        <f7-navbar title="Right Panel" sliding></f7-navbar>
+                        <f7-block>
+                            <p>Right panel content goes here</p>
+                        </f7-block>
+                        <f7-block-title>Load page in panel</f7-block-title>
+                        <f7-list>
+                            <f7-list-item link="/about/" title="About"></f7-list-item>
+                            <f7-list-item link="/form/" title="Form"></f7-list-item>
+                        </f7-list>
+                        <f7-block-title>Load page in main view</f7-block-title>
+                        <f7-list>
+                            <f7-list-item link="/about/" title="About" view="#main-view" panel-close></f7-list-item>
+                            <f7-list-item link="/form/" title="Form" view="#main-view" panel-close></f7-list-item>
+                        </f7-list>
+                    </f7-page>
+                </f7-view>
+            </f7-panel>
+
+            <!-- Main View -->
+            <f7-view id="main-view" main class="safe-areas" color-theme="pink">
+                <div class="row no-gutters vh-100 loader-screen" id="page-loader">
+                    <div class="col align-self-center text-white text-align-center">
+                        <img src="img/logo.png" alt="logo">
+                        <h1><span class="font-weight-light">Go</span>Fruit</h1>
+                        <div class="laoderhorizontal">
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                        </div>
+                    </div>
+                </div>
+                <f7-page>
+                    <f7-swiper pagination class="intro-swiper ">
+                        <f7-swiper-slide class="bg-orange">
+                            <img src="img/orange-slices.png" alt="" class="orange-slice right-image align-self-center">
+                            <div class="row">
+                                <div class="color-white col-50 padding-left">
+                                    <h1 class="text-uppercase">Other Controls Elements</h1>
+                                    <p>Click on Menu button &gt; Side menu and select other controls</p>
+                                </div>
+                            </div>
+                        </f7-swiper-slide>
+                        <f7-swiper-slide class="bg-success">
+                            <img src="img/pineapple.png" alt="" class="pinapple right-image align-self-center">
+                            <div class="row">
+                                <div class="color-white col-50 padding-left">
+                                    <h1 class="text-uppercase">Testy Awesome Fruits</h1>
+                                    <p>Lorem ipsum dolor sit amet, consect etur adipiscing elit. Sndisse conv allis.</p>
+                                </div>
+                            </div>
+                        </f7-swiper-slide>
+                        <f7-swiper-slide class="bg-warning">
+                            <img src="img/banana.png" alt="" class="banana right-image align-self-center">
+                            <div class="row">
+                                <div class="color-white col-50 padding-left">
+                                    <h1 class="text-uppercase">Loving Freshness Everyday</h1>
+                                    <p>Lorem ipsum dolor sit amet, consect etur adipiscing elit. Sndisse conv allis.</p>
+                                </div>
+                            </div>
+                        </f7-swiper-slide>
+                    </f7-swiper>
+                    <div class="fab fab-right-bottom">
+                        <f7-link href="/home/" class="button button-raised button-round button-rounded-54 color-pink"><i class="material-icons">arrow_forward</i></f7-link>
+                    </div>
+                </f7-page>
+
+            </f7-view>
+
+        </f7-app>
+    </div>
+
+
+    <!-- Page Not Found Template -->
+    <template id="page-not-found">
+        <f7-page>
+            <f7-navbar title="Not found" back-link="Back"></f7-navbar>
+            <f7-block strong>
+                <p>Sorry</p>
+                <p>Requested content not found.</p>
+            </f7-block>
+        </f7-page>
+    </template>
+
+
+    <!--home page template -->
+    <template id="HomePage">
+        <f7-page class="page-homepage light" data-name="homepage" :page-content="false">
+
+            <f7-navbar>
+                <f7-nav-left>
+                    <f7-link icon-if-ios="f7:menu" icon-if-md="material:menu" panel-open="left"></f7-link>
+                </f7-nav-left>
+                <f7-nav-title><img src="img/logo-header.png" alt="" class="header-logo"> </f7-nav-title>
+                <f7-nav-right>
+                    <f7-link link="/profile/" icon-if-ios="f7:person" icon-if-md="material:person"></f7-link>
+                    <f7-link link="/profile/" icon-if-ios="f7:search" icon-if-md="material:search" searchbar-enable data-searchbar=".searchbar-components"></f7-link>
+                </f7-nav-right>
+                <form data-search-container=".components-list" data-search-in="a" class="searchbar searchbar-expandable searchbar-components searchbar-init">
+                    <div class="searchbar-inner">
+                        <div class="searchbar-input-wrap">
+                            <input type="search" placeholder="Search components" />
+                            <i class="searchbar-icon"></i>
+                            <span class="input-clear-button"></span>
+                        </div>
+                        <span class="searchbar-disable-button if-not-aurora"></span>
+                    </div>
+                </form>
+            </f7-navbar>
+
+            <f7-toolbar tabbar bottom class="o-visible">
+                <f7-link tab-link="#tab-1" tab-link-active><i class="material-icons">store_mall_directory</i></f7-link>
+                <f7-link tab-link="#tab-2" class="tab-link" onclick="chart1()"><i class="material-icons">insert_chart</i></f7-link>
+                <f7-link tab-link="#tab-3" class="tab-link o-visible"><span class="centerbutton button button-fill"><i class="material-icons">local_mall</i><span class="cart_counter">3</span></span></f7-link>
+                <f7-link tab-link="#tab-4" class="tab-link"><i class="material-icons">favorite</i></f7-link>
+                <f7-link tab-link="#tab-5" class="tab-link"><i class="material-icons">account_circle</i></f7-link>
+            </f7-toolbar>
+
+            <f7-tabs>
+                <f7-tab id="tab-1" class="page-content" tab-active>
+                    <f7-block>
+                        <f7-list no-hairlines-md class="search-rounded">
+                            <f7-list-input type="text" placeholder="Search" clear-button></f7-list-input>
+                        </f7-list>
+                    </f7-block>
+                    <f7-block-title>Categories</f7-block-title>
+                    <f7-block>
+                        <!-- Swiper -->
+                        <f7-swiper class="small-slide" pagination :params="{slidesPerView:'auto'}">
+                            <f7-swiper-slide>
+                                <f7-card>
+                                    <f7-card-content class="no-padding-top">
+                                        <div class="row no-gutters h-100">
+                                            <img src="img/orange.png" alt="" class="small-slide-right">
+                                            <div class="col">
+                                                <button class="button color-pink no-padding width-auto"><i class="material-icons md-18">favorite_outline</i></button>
+                                                <a href="/allproducts/" class="text-dark mb-1 mt-2 h6 d-block">Citrus </a>
+                                                <p class="text-secondary small">Oranges,<br>Grapefruit,<br>Mandarins</p>
+                                            </div>
+                                        </div>
+                                    </f7-card-content>
+                                </f7-card>
+                            </f7-swiper-slide>
+                            <f7-swiper-slide>
+                                <f7-card>
+                                    <f7-card-content class="no-padding-top">
+                                        <div class="row no-gutters h-100">
+                                            <img src="img/banana-small.png" alt="" class="small-slide-right">
+                                            <div class="col">
+                                                <button class="button color-pink no-padding width-auto"><i class="material-icons md-18">favorite</i></button>
+                                                <a href="/allproducts/" class="text-dark mb-1 mt-2 h6 d-block">Tropical </a>
+                                                <p class="text-secondary small">Bananas,<br>Mangoes</p>
+                                            </div>
+                                        </div>
+                                    </f7-card-content>
+                                </f7-card>
+                            </f7-swiper-slide>
+                            <f7-swiper-slide>
+                                <f7-card>
+                                    <f7-card-content class="no-padding-top">
+                                        <div class="row no-gutters h-100">
+                                            <img src="img/grapes.png" alt="" class="small-slide-right">
+                                            <div class="col">
+                                                <button class="button color-pink no-padding width-auto"><i class="material-icons md-18">favorite_outline</i></button>
+                                                <a href="/allproducts/" class="text-dark mb-1 mt-2 h6 d-block">Berries</a>
+                                                <p class="text-secondary small">Strawberries,<br>Raspberries,<br>Blueberries</p>
+                                            </div>
+                                        </div>
+                                    </f7-card-content>
+                                </f7-card>
+                            </f7-swiper-slide>
+                            <f7-swiper-slide>
+                                <f7-card>
+                                    <f7-card-content class="no-padding-top">
+                                        <div class="row no-gutters h-100">
+                                            <img src="img/orange.png" alt="" class="small-slide-right">
+                                            <div class="col">
+                                                <button class="button color-pink no-padding width-auto"><i class="material-icons md-18">favorite_outline</i></button>
+                                                <a href="/allproducts/" class="text-dark mb-1 mt-2 h6 d-block">Citrus </a>
+                                                <p class="text-secondary small">Oranges,<br>Grapefruit,<br>Mandarins</p>
+                                            </div>
+                                        </div>
+                                    </f7-card-content>
+                                </f7-card>
+                            </f7-swiper-slide>
+                            <f7-swiper-slide>
+                                <f7-card>
+                                    <f7-card-content class="no-padding-top">
+                                        <div class="row no-gutters h-100">
+                                            <img src="img/banana-small.png" alt="" class="small-slide-right">
+                                            <div class="col">
+                                                <button class="button color-pink no-padding width-auto"><i class="material-icons md-18">favorite</i></button>
+                                                <a href="/allproducts/" class="text-dark mb-1 mt-2 h6 d-block">Tropical </a>
+                                                <p class="text-secondary small">Bananas,<br>Mangoes</p>
+                                            </div>
+                                        </div>
+                                    </f7-card-content>
+                                </f7-card>
+                            </f7-swiper-slide>
+                            <f7-swiper-slide>
+                                <f7-card>
+                                    <f7-card-content class="no-padding-top">
+                                        <div class="row no-gutters h-100">
+                                            <img src="img/grapes.png" alt="" class="small-slide-right">
+                                            <div class="col">
+                                                <button class="button color-pink no-padding width-auto"><i class="material-icons md-18">favorite_outline</i></button>
+                                                <a href="/allproducts/" class="text-dark mb-1 mt-2 h6 d-block">Berries</a>
+                                                <p class="text-secondary small">Strawberries,<br>Raspberries,<br>Blueberries</p>
+                                            </div>
+                                        </div>
+                                    </f7-card-content>
+                                </f7-card>
+                            </f7-swiper-slide>
+                            <f7-swiper-slide>
+                                <f7-card>
+                                    <f7-card-content class="no-padding-top">
+                                        <div class="row no-gutters h-100">
+                                            <img src="img/orange.png" alt="" class="small-slide-right">
+                                            <div class="col">
+                                                <button class="button color-pink no-padding width-auto"><i class="material-icons md-18">favorite_outline</i></button>
+                                                <a href="/allproducts/" class="text-dark mb-1 mt-2 h6 d-block">Citrus </a>
+                                                <p class="text-secondary small">Oranges,<br>Grapefruit,<br>Mandarins</p>
+                                            </div>
+                                        </div>
+                                    </f7-card-content>
+                                </f7-card>
+                            </f7-swiper-slide>
+                            <f7-swiper-slide>
+                                <f7-card>
+                                    <f7-card-content class="no-padding-top">
+                                        <div class="row no-gutters h-100">
+                                            <img src="img/banana-small.png" alt="" class="small-slide-right">
+                                            <div class="col">
+                                                <button class="button color-pink no-padding width-auto"><i class="material-icons md-18">favorite</i></button>
+                                                <a href="/allproducts/" class="text-dark mb-1 mt-2 h6 d-block">Tropical </a>
+                                                <p class="text-secondary small">Bananas,<br>Mangoes</p>
+                                            </div>
+                                        </div>
+                                    </f7-card-content>
+                                </f7-card>
+                            </f7-swiper-slide>
+                            <f7-swiper-slide>
+                                <f7-card>
+                                    <f7-card-content class="no-padding-top">
+                                        <div class="row no-gutters h-100">
+                                            <img src="img/grapes.png" alt="" class="small-slide-right">
+                                            <div class="col">
+                                                <button class="button color-pink no-padding width-auto"><i class="material-icons md-18">favorite_outline</i></button>
+                                                <a href="/allproducts/" class="text-dark mb-1 mt-2 h6 d-block">Berries</a>
+                                                <p class="text-secondary small">Strawberries,<br>Raspberries,<br>Blueberries</p>
+                                            </div>
+                                        </div>
+                                    </f7-card-content>
+                                </f7-card>
+                            </f7-swiper-slide>
+                        </f7-swiper>
+                    </f7-block>
+                    <f7-block-title>Products <a href="/allproducts/" class="float-right">View All</a></f7-block-title>
+                    <f7-block>
+                        <div class="row">
+                            <div class="col-50 medium-33 desktop-25">
+                                <f7-card>
+                                    <f7-card-content>
+                                        <div class="row">
+                                            <div class="col">
+                                                <button class="button color-pink width-auto"><i class="material-icons md-18">favorite_outline</i></button>
+                                            </div>
+                                            <div class="col">
+                                                <div class="badge badge-success float-right margin-top-half">10% off</div>
+                                            </div>
+                                        </div>
+                                        <figure class="product-image"><img src="img/apple.png" alt="" class=""></figure>
+                                        <a href="product-details.html" class="text-dark h5 margin-vertical">Red Apple </a>
+                                        <p class="text-secondary small no-margin">Imported from Simla</p>
+                                        <h5 class="text-green font-weight-normal no-margin">$ 120<sup>.00</sup></h5>
+                                        <p class="text-secondary small text-mute no-margin">1.0 kg</p>
+                                        <button class="button button-fill color-pink button-fab button-round"><i class="material-icons md-18">shopping_cart</i></button>
+                                    </f7-card-content>
+                                </f7-card>
+                            </div>
+                            <div class="col-50 medium-33 desktop-25">
+                                <f7-card>
+                                    <f7-card-content>
+                                        <div class="row">
+                                            <div class="col">
+                                                <button class="button color-pink width-auto"><i class="material-icons md-18">favorite_outline</i></button>
+                                            </div>
+                                            <div class="col">
+                                                <div class="badge badge-success float-right margin-top-half">10% off</div>
+                                            </div>
+                                        </div>
+                                        <figure class="product-image"><img src="img/grapes2.png" alt="" class=""></figure>
+                                        <a href="product-details.html" class="text-dark h5 margin-vertical">Green Grapes</a>
+                                        <p class="text-secondary small no-margin">Chilled fresh</p>
+                                        <h5 class="text-green font-weight-normal no-margin">$ 100<sup>.00</sup></h5>
+                                        <p class="text-secondary small text-mute no-margin">1.0 kg</p>
+                                        <button class="button button-fill color-pink button-fab button-round"><i class="material-icons md-18">shopping_cart</i></button>
+                                    </f7-card-content>
+                                </f7-card>
+                            </div>
+                            <div class="col-50 medium-33 desktop-25">
+                                <f7-card>
+                                    <f7-card-content>
+                                        <div class="row">
+                                            <div class="col">
+                                                <button class="button color-pink width-auto"><i class="material-icons md-18">favorite_outline</i></button>
+                                            </div>
+                                            <div class="col">
+                                                <div class="badge badge-primary float-right">10% off</div>
+                                            </div>
+                                        </div>
+                                        <figure class="product-image"><img src="img/orange-2.png" alt="" class=""></figure>
+                                        <a href="product-details.html" class="text-dark h5 margin-vertical">Orange</a>
+                                        <p class="text-secondary small no-margin">Sweet and Juicy</p>
+                                        <h5 class="text-green font-weight-normal no-margin">$ 120<sup>.00</sup></h5>
+                                        <p class="text-secondary small text-mute no-margin">1.0 kg</p>
+                                        <button class="button button-fill color-pink button-fab button-round"><i class="material-icons md-18">shopping_cart</i></button>
+                                    </f7-card-content>
+                                </f7-card>
+                            </div>
+                            <div class="col-50 medium-33 desktop-25">
+                                <f7-card>
+                                    <f7-card-content>
+                                        <div class="row">
+                                            <div class="col">
+                                                <button class="button color-pink width-auto"><i class="material-icons md-18">favorite_outline</i></button>
+                                            </div>
+                                            <div class="col">
+                                                <div class="badge badge-success float-right margin-top-half">10% off</div>
+                                            </div>
+                                        </div>
+                                        <figure class="product-image"><img src="img/orange-small.png" alt="" class=""></figure>
+                                        <a href="product-details.html" class="text-dark h5 margin-vertical">Lemon</a>
+                                        <p class="text-secondary small no-margin">Most Demanded</p>
+                                        <h5 class="text-green font-weight-normal no-margin">$ 120<sup>.00</sup></h5>
+                                        <p class="text-secondary small text-mute no-margin">1.0 kg</p>
+                                        <button class="button button-fill color-pink button-fab button-round"><i class="material-icons md-18">shopping_cart</i></button>
+                                    </f7-card-content>
+                                </f7-card>
+                            </div>
+                            <div class="col-50 medium-33 desktop-25">
+                                <f7-card>
+                                    <f7-card-content>
+                                        <div class="row">
+                                            <div class="col">
+                                                <button class="button color-pink width-auto"><i class="material-icons md-18">favorite_outline</i></button>
+                                            </div>
+                                            <div class="col">
+                                                <div class="badge badge-success float-right margin-top-half">10% off</div>
+                                            </div>
+                                        </div>
+                                        <figure class="product-image"><img src="img/apple.png" alt="" class=""></figure>
+                                        <a href="product-details.html" class="text-dark h5 margin-vertical">Red Apple </a>
+                                        <p class="text-secondary small no-margin">Imported from Simla</p>
+                                        <h5 class="text-green font-weight-normal no-margin">$ 120<sup>.00</sup></h5>
+                                        <p class="text-secondary small text-mute no-margin">1.0 kg</p>
+                                        <button class="button button-fill color-pink button-fab button-round"><i class="material-icons md-18">shopping_cart</i></button>
+                                    </f7-card-content>
+                                </f7-card>
+                            </div>
+                            <div class="col-50 medium-33 desktop-25">
+                                <f7-card>
+                                    <f7-card-content>
+                                        <div class="row">
+                                            <div class="col">
+                                                <button class="button color-pink width-auto"><i class="material-icons md-18">favorite_outline</i></button>
+                                            </div>
+                                            <div class="col">
+                                                <div class="badge badge-success float-right margin-top-half">10% off</div>
+                                            </div>
+                                        </div>
+                                        <figure class="product-image"><img src="img/grapes2.png" alt="" class=""></figure>
+                                        <a href="product-details.html" class="text-dark h5 margin-vertical">Green Grapes</a>
+                                        <p class="text-secondary small no-margin">Chilled fresh</p>
+                                        <h5 class="text-green font-weight-normal no-margin">$ 100<sup>.00</sup></h5>
+                                        <p class="text-secondary small text-mute no-margin">1.0 kg</p>
+                                        <button class="button button-fill color-pink button-fab button-round"><i class="material-icons md-18">shopping_cart</i></button>
+
+                                    </f7-card-content>
+                                </f7-card>
+                            </div>
+                        </div>
+                    </f7-block>
+                    <div class="row bg-warning">
+                        <f7-block>
+                            <div class="row ">
+                                <div class="col">
+                                    <h1 class="text-uppercase mb-3">20% OFF Season Sale</h1>
+                                    <p class="margin-bottom">Use Coupan Code<br><span class="text-dark">DFR0020</span></p>
+                                    <p>Get the all new fresh bananas at very low price</p>
+                                </div>
+                                <div class="col-30">
+                                    <img src="img/banana.png" alt="" class="width-100">
+                                </div>
+                            </div>
+                        </f7-block>
+                    </div>
+                    <f7-block-title>Are you looking for: </f7-block-title>
+                    <f7-block>
+                        <button class="display-inline-block button button-round button-fill color-white text-color-black width-auto margin-bottom-half">Fresh</button>
+                        <button class="display-inline-block button button-round button-fill color-white text-color-black width-auto margin-bottom-half">$100
+                            - $299</button>
+                        <button class="display-inline-block button button-round button-fill color-white text-color-black width-auto margin-bottom-half">600+</button>
+                        <button class="display-inline-block button button-round button-fill color-white text-color-black width-auto margin-bottom-half">$300
+                            - $599</button>
+                        <button class="display-inline-block button button-round button-fill color-white text-color-black width-auto margin-bottom-half">Deliver
+                            Today</button>
+                    </f7-block>
+                    <f7-block-title>News Updates</f7-block-title>
+                    <f7-block>
+                        <!-- Swiper -->
+                        <f7-swiper class="news-slide" pagination :params="{slidesPerView:'auto', spaceBetween:'15'}">
+                            <f7-swiper-slide>
+                                <f7-card class="bg-dark text-white">
+                                    <figure class="background" style="background-image: url('img/fresh-orange-juice.jpg')">
+                                    </figure>
+                                    <f7-card-content>
+                                        <h5 class="small">Multipurpose Juice allows you to grow faster</h5>
+                                        <p class="text-mute small">By Anand Mangal</p>
+                                    </f7-card-content>
+                                    <a href="" class="button button-fill color-pink button-fab button-round"><i class="material-icons md-18">arrow_forward</i></a>
+                                </f7-card>
+                            </f7-swiper-slide>
+                            <f7-swiper-slide>
+                                <f7-card class="bg-dark text-white">
+                                    <figure class="background" style="background-image: url('img/fresh-orange-juice.jpg')">
+                                    </figure>
+                                    <f7-card-content>
+                                        <h5 class="small">Multipurpose Juice allows you to grow faster</h5>
+                                        <p class="text-mute small">By Anand Mangal</p>
+                                    </f7-card-content>
+                                    <a href="" class="button button-fill color-pink button-fab button-round"><i class="material-icons md-18">arrow_forward</i></a>
+                                </f7-card>
+                            </f7-swiper-slide>
+                            <f7-swiper-slide>
+                                <f7-card class="bg-dark text-white">
+                                    <figure class="background" style="background-image: url('img/fresh-orange-juice.jpg')">
+                                    </figure>
+                                    <f7-card-content>
+                                        <h5 class="small">Multipurpose Juice allows you to grow faster</h5>
+                                        <p class="text-mute small">By Anand Mangal</p>
+                                    </f7-card-content>
+                                    <a href="" class="button button-fill color-pink button-fab button-round"><i class="material-icons md-18">arrow_forward</i></a>
+                                </f7-card>
+                            </f7-swiper-slide>
+                            <f7-swiper-slide>
+                                <f7-card class="bg-dark text-white">
+                                    <figure class="background" style="background-image: url('img/fresh-orange-juice.jpg')">
+                                    </figure>
+                                    <f7-card-content>
+                                        <h5 class="small">Multipurpose Juice allows you to grow faster</h5>
+                                        <p class="text-mute small">By Anand Mangal</p>
+                                    </f7-card-content>
+                                    <a href="" class="button button-fill color-pink button-fab button-round"><i class="material-icons md-18">arrow_forward</i></a>
+                                </f7-card>
+                            </f7-swiper-slide>
+                            <f7-swiper-slide>
+                                <f7-card class="bg-dark text-white">
+                                    <figure class="background" style="background-image: url('img/fresh-orange-juice.jpg')">
+                                    </figure>
+                                    <f7-card-content>
+                                        <h5 class="small">Multipurpose Juice allows you to grow faster</h5>
+                                        <p class="text-mute small">By Anand Mangal</p>
+                                    </f7-card-content>
+                                    <a href="" class="button button-fill color-pink button-fab button-round"><i class="material-icons md-18">arrow_forward</i></a>
+                                </f7-card>
+                            </f7-swiper-slide>
+                            <f7-swiper-slide>
+                                <f7-card class="bg-dark text-white">
+                                    <figure class="background" style="background-image: url('img/fresh-orange-juice.jpg')">
+                                    </figure>
+                                    <f7-card-content>
+                                        <h5 class="small">Multipurpose Juice allows you to grow faster</h5>
+                                        <p class="text-mute small">By Anand Mangal</p>
+                                    </f7-card-content>
+                                    <a href="" class="button button-fill color-pink button-fab button-round"><i class="material-icons md-18">arrow_forward</i></a>
+                                </f7-card>
+                            </f7-swiper-slide>
+                        </f7-swiper>
+                    </f7-block>
+                    <f7-block-title class="text-align-center">Most Exciting Feature</f7-block-title>
+                    <p class="text-secondary text-align-center">Take a look at our services</p>
+                    <f7-block>
+                        <div class="row text-center mt-4">
+                            <div class="col-50 medium-33 desktop-25">
+                                <f7-card class="text-align-center">
+                                    <f7-card-content>
+                                        <i class="material-icons h2 text-template">card_giftcard</i>
+                                        <h2>2546</h2>
+                                        <p class="text-secondary text-mute">Gift it out</p>
+                                    </f7-card-content>
+                                </f7-card>
+                            </div>
+                            <div class="col-50 medium-33 desktop-25">
+                                <f7-card class="text-align-center">
+                                    <f7-card-content>
+                                        <i class="material-icons h2 text-template">subscriptions</i>
+                                        <h2>635</h2>
+                                        <p class="text-secondary text-mute">Monthly Billed</p>
+                                    </f7-card-content>
+                                </f7-card>
+                            </div>
+                            <div class="col-50 medium-33 desktop-25">
+                                <f7-card class="text-align-center">
+                                    <f7-card-content>
+                                        <i class="material-icons h2 text-template">local_florist</i>
+                                        <h2>1542</h2>
+                                        <p class="text-secondary text-mute">Eco environment</p>
+                                    </f7-card-content>
+                                </f7-card>
+                            </div>
+                            <div class="col-50 medium-33 desktop-25">
+                                <f7-card class="text-align-center">
+                                    <f7-card-content>
+                                        <i class="material-icons h2 text-template">location_city</i>
+                                        <h2>154</h2>
+                                        <p class="text-secondary text-mute">Four Offices</p>
+                                    </f7-card-content>
+                                </f7-card>
+                            </div>
+                        </div>
+                    </f7-block>
+                </f7-tab>
+                <f7-tab id="tab-2" class="page-content tab">
+                    <f7-block-title>This Month<br><small>1/07/2019 - 28-07-2019</small></f7-block-title>
+                    <f7-block>
+                        <div class="card mb-4 border-0 shadow-sm">
+                            <f7-card-content>
+                                <div class="row">
+                                    <span class="button button-fill button-large color-pink padding-horizontal width-auto">
+                                        <i class="material-icons">account_balance_wallet</i>
+                                    </span>
+                                    <div class="col text-align-center">
+                                        <p class="text-secondary no-margin-top margin-bottom-half">Balance Available</p>
+                                        <h3 class="text-dark no-margin">$2585.00</h3>
+                                    </div>
+                                    <button class="button button-raised button-round button-fill color-pink  width-auto"><i class="material-icons">add</i></button>
+                                </div>
+                                <div class="row margin-top">
+                                    <div class="col-100">
+                                        <canvas id="chartcanvas"></canvas>
+                                    </div>
+                                </div>
+                        </div>
+                    </f7-block>
+                    </f7-block>
+                    <f7-block-title>Industry is growing</f7-block-title>
+                    <f7-block>
+                        <f7-card>
+                            <f7-card-content>
+                                <div class="row">
+                                    <div class="col text-align-center padding">
+                                        <div class="gauge gauge-init" data-type="circle" data-value="0.44" data-value-text="44%" data-value-text-color="#ff9800" data-border-color="#ff9800"></div>
+                                    </div>
+                                    <div class="col text-align-center padding">
+                                        <div class="gauge gauge-init" data-type="circle" data-value="0.12" data-value-text="$120" data-value-text-color="#4caf50" data-border-color="#4caf50" data-label-text="of $1000 budget" data-label-text-color="#f44336" data-label-font-weight="700"></div>
+                                    </div>
+                                </div>
+                            </f7-card-content>
+                        </f7-card>
+                    </f7-block>
+                    <f7-block>
+                        <div class="row">
+                            <div class="col-50">
+                                <f7-card>
+                                    <f7-card-content>
+                                        <div class="row">
+                                            <span class="button button-fill align-self-center button-round color-green">
+                                                <i class="material-icons md-18 text-mute">card_giftcard</i>
+                                            </span>
+                                            <div class="col-70 padding-left-half">
+                                                <p class="text-secondary margin-bottom-half no-margin-top small">Total Saving</p>
+                                                <h6 class="text-dark no-margin">$585.00</h6>
+                                            </div>
+                                        </div>
+                                    </f7-card-content>
+                                </f7-card>
+                            </div>
+                            <div class="col-50">
+                                <f7-card>
+                                    <f7-card-content>
+                                        <div class="row">
+                                            <span class="button button-fill align-self-center button-round color-yellow">
+                                                <i class="material-icons md-18 text-mute">payment</i>
+                                            </span>
+                                            <div class="col-70 padding-left-half">
+                                                <p class="text-secondary margin-bottom-half no-margin-top small">Expense</p>
+                                                <h6 class="text-dark no-margin">$1585.00</h6>
+                                            </div>
+                                        </div>
+                                    </f7-card-content>
+                                </f7-card>
+                            </div>
+                        </div>
+                    </f7-block>
+                    <f7-block-title>Categories</f7-block-title>
+                    <f7-block>
+                        <!-- Swiper -->
+                        <f7-swiper class="small-slide" pagination :params="{slidesPerView:'auto'}">
+                            <f7-swiper-slide>
+                                <f7-card>
+                                    <f7-card-content class="no-padding-top">
+                                        <div class="row no-gutters h-100">
+                                            <img src="img/orange.png" alt="" class="small-slide-right">
+                                            <div class="col">
+                                                <button class="button color-pink no-padding width-auto"><i class="material-icons md-18">favorite_outline</i></button>
+                                                <a href="/allproducts/" class="text-dark mb-1 mt-2 h6 d-block">Citrus </a>
+                                                <p class="text-secondary small">Oranges,<br>Grapefruit,<br>Mandarins</p>
+                                            </div>
+                                        </div>
+                                    </f7-card-content>
+                                </f7-card>
+                            </f7-swiper-slide>
+                            <f7-swiper-slide>
+                                <f7-card>
+                                    <f7-card-content class="no-padding-top">
+                                        <div class="row no-gutters h-100">
+                                            <img src="img/banana-small.png" alt="" class="small-slide-right">
+                                            <div class="col">
+                                                <button class="button color-pink no-padding width-auto"><i class="material-icons md-18">favorite</i></button>
+                                                <a href="/allproducts/" class="text-dark mb-1 mt-2 h6 d-block">Tropical </a>
+                                                <p class="text-secondary small">Bananas,<br>Mangoes</p>
+                                            </div>
+                                        </div>
+                                    </f7-card-content>
+                                </f7-card>
+                            </f7-swiper-slide>
+                            <f7-swiper-slide>
+                                <f7-card>
+                                    <f7-card-content class="no-padding-top">
+                                        <div class="row no-gutters h-100">
+                                            <img src="img/grapes.png" alt="" class="small-slide-right">
+                                            <div class="col">
+                                                <button class="button color-pink no-padding width-auto"><i class="material-icons md-18">favorite_outline</i></button>
+                                                <a href="/allproducts/" class="text-dark mb-1 mt-2 h6 d-block">Berries</a>
+                                                <p class="text-secondary small">Strawberries,<br>Raspberries,<br>Blueberries</p>
+                                            </div>
+                                        </div>
+                                    </f7-card-content>
+                                </f7-card>
+                            </f7-swiper-slide>
+                            <f7-swiper-slide>
+                                <f7-card>
+                                    <f7-card-content class="no-padding-top">
+                                        <div class="row no-gutters h-100">
+                                            <img src="img/orange.png" alt="" class="small-slide-right">
+                                            <div class="col">
+                                                <button class="button color-pink no-padding width-auto"><i class="material-icons md-18">favorite_outline</i></button>
+                                                <a href="/allproducts/" class="text-dark mb-1 mt-2 h6 d-block">Citrus </a>
+                                                <p class="text-secondary small">Oranges,<br>Grapefruit,<br>Mandarins</p>
+                                            </div>
+                                        </div>
+                                    </f7-card-content>
+                                </f7-card>
+                            </f7-swiper-slide>
+                            <f7-swiper-slide>
+                                <f7-card>
+                                    <f7-card-content class="no-padding-top">
+                                        <div class="row no-gutters h-100">
+                                            <img src="img/banana-small.png" alt="" class="small-slide-right">
+                                            <div class="col">
+                                                <button class="button color-pink no-padding width-auto"><i class="material-icons md-18">favorite</i></button>
+                                                <a href="/allproducts/" class="text-dark mb-1 mt-2 h6 d-block">Tropical </a>
+                                                <p class="text-secondary small">Bananas,<br>Mangoes</p>
+                                            </div>
+                                        </div>
+                                    </f7-card-content>
+                                </f7-card>
+                            </f7-swiper-slide>
+                            <f7-swiper-slide>
+                                <f7-card>
+                                    <f7-card-content class="no-padding-top">
+                                        <div class="row no-gutters h-100">
+                                            <img src="img/grapes.png" alt="" class="small-slide-right">
+                                            <div class="col">
+                                                <button class="button color-pink no-padding width-auto"><i class="material-icons md-18">favorite_outline</i></button>
+                                                <a href="/allproducts/" class="text-dark mb-1 mt-2 h6 d-block">Berries</a>
+                                                <p class="text-secondary small">Strawberries,<br>Raspberries,<br>Blueberries</p>
+                                            </div>
+                                        </div>
+                                    </f7-card-content>
+                                </f7-card>
+                            </f7-swiper-slide>
+                            <f7-swiper-slide>
+                                <f7-card>
+                                    <f7-card-content class="no-padding-top">
+                                        <div class="row no-gutters h-100">
+                                            <img src="img/orange.png" alt="" class="small-slide-right">
+                                            <div class="col">
+                                                <button class="button color-pink no-padding width-auto"><i class="material-icons md-18">favorite_outline</i></button>
+                                                <a href="/allproducts/" class="text-dark mb-1 mt-2 h6 d-block">Citrus </a>
+                                                <p class="text-secondary small">Oranges,<br>Grapefruit,<br>Mandarins</p>
+                                            </div>
+                                        </div>
+                                    </f7-card-content>
+                                </f7-card>
+                            </f7-swiper-slide>
+                            <f7-swiper-slide>
+                                <f7-card>
+                                    <f7-card-content class="no-padding-top">
+                                        <div class="row no-gutters h-100">
+                                            <img src="img/banana-small.png" alt="" class="small-slide-right">
+                                            <div class="col">
+                                                <button class="button color-pink no-padding width-auto"><i class="material-icons md-18">favorite</i></button>
+                                                <a href="/allproducts/" class="text-dark mb-1 mt-2 h6 d-block">Tropical </a>
+                                                <p class="text-secondary small">Bananas,<br>Mangoes</p>
+                                            </div>
+                                        </div>
+                                    </f7-card-content>
+                                </f7-card>
+                            </f7-swiper-slide>
+                            <f7-swiper-slide>
+                                <f7-card>
+                                    <f7-card-content class="no-padding-top">
+                                        <div class="row no-gutters h-100">
+                                            <img src="img/grapes.png" alt="" class="small-slide-right">
+                                            <div class="col">
+                                                <button class="button color-pink no-padding width-auto"><i class="material-icons md-18">favorite_outline</i></button>
+                                                <a href="/allproducts/" class="text-dark mb-1 mt-2 h6 d-block">Berries</a>
+                                                <p class="text-secondary small">Strawberries,<br>Raspberries,<br>Blueberries</p>
+                                            </div>
+                                        </div>
+                                    </f7-card-content>
+                                </f7-card>
+                            </f7-swiper-slide>
+                        </f7-swiper>
+                    </f7-block>
+                    <f7-block-title>Product Budget</f7-block-title>
+                    <f7-block>
+                        <div class="row">
+                            <div class="col-100 medium-50 large-33">
+                                <f7-card>
+                                    <f7-card-content>
+                                        <div class="row">
+                                            <div class="col-25">
+                                                <figure class="product-image no-margin"><img src="img/apple.png" alt="" class=""></figure>
+                                            </div>
+                                            <div class="col-75 align-self-center">
+                                                <div class="text-dark margin-bottom-half h6">Red Apple
+                                                    <div class="float-right">
+                                                        <div class="badge color-green display-inline-block"><small>10% off</small></div>
+                                                        <span class="text-secondary small no-margin-bottom margin-left-half">1.0 kg</span>
+                                                    </div>
+                                                </div>
+                                                <div class="progressbar color-pink h-6" data-progress="30"></div>
+                                            </div>
+                                        </div>
+                                    </f7-card-content>
+                                </f7-card>
+                            </div>
+                            <div class="col-100 medium-50 large-33">
+                                <f7-card>
+                                    <f7-card-content>
+                                        <div class="row">
+                                            <div class="col-25">
+                                                <figure class="product-image no-margin"><img src="img/grapes2.png" alt="" class=""></figure>
+                                            </div>
+                                            <div class="col-75 align-self-center">
+                                                <div class="text-dark margin-bottom-half h6">Green Grapes
+                                                    <div class="float-right">
+                                                        <div class="badge color-green display-inline-block"><small>15% off</small></div>
+                                                        <span class="text-secondary small no-margin-bottom margin-left-half">1.0 kg</span>
+                                                    </div>
+                                                </div>
+                                                <div class="progressbar color-green h-6" data-progress="30"></div>
+                                            </div>
+                                        </div>
+                                    </f7-card-content>
+                                </f7-card>
+                            </div>
+                            <div class="col-100 medium-50 large-33">
+                                <f7-card>
+                                    <f7-card-content>
+                                        <div class="row">
+                                            <div class="col-25">
+                                                <figure class="product-image no-margin"><img src="img/orange-2.png" alt="" class=""></figure>
+                                            </div>
+                                            <div class="col-75 align-self-center">
+                                                <div class="text-dark margin-bottom-half h6">Orange
+                                                    <div class="float-right">
+                                                        <div class="badge color-orange display-inline-block"><small>15% off</small></div>
+                                                        <span class="text-secondary small no-margin-bottom margin-left-half">1.0 kg</span>
+                                                    </div>
+                                                </div>
+                                                <div class="progressbar color-pink h-6" data-progress="30"></div>
+                                            </div>
+                                        </div>
+                                    </f7-card-content>
+                                </f7-card>
+                            </div>
+                        </div>
+                    </f7-block>
+                    <div class="row bg-success">
+                        <f7-block>
+                            <div class="row ">
+                                <div class="col">
+                                    <h1 class="text-uppercase mb-3">20% OFF Season Sale</h1>
+                                    <p class="margin-bottom">Use Coupan Code<br><span class="text-dark">DFR0020</span></p>
+                                    <p>Get the all new fresh bananas at very low price</p>
+                                </div>
+                                <div class="col-30">
+                                    <img src="img/pineapple.png" alt="" class="width-100">
+                                </div>
+                            </div>
+                        </f7-block>
+                    </div>
+                    <f7-block-title>News Updates</f7-block-title>
+                    <f7-block>
+                        <!-- Swiper -->
+                        <f7-swiper class="news-slide" pagination :params="{slidesPerView:'auto', spaceBetween:'15'}">
+                            <f7-swiper-slide>
+                                <f7-card class="bg-dark text-white">
+                                    <figure class="background" style="background-image: url('img/fresh-orange-juice.jpg')">
+                                    </figure>
+                                    <f7-card-content>
+                                        <h5 class="small">Multipurpose Juice allows you to grow faster</h5>
+                                        <p class="text-mute small">By Anand Mangal</p>
+                                    </f7-card-content>
+                                    <a href="" class="button button-fill color-pink button-fab button-round"><i class="material-icons md-18">arrow_forward</i></a>
+                                </f7-card>
+                            </f7-swiper-slide>
+                            <f7-swiper-slide>
+                                <f7-card class="bg-dark text-white">
+                                    <figure class="background" style="background-image: url('img/fresh-orange-juice.jpg')">
+                                    </figure>
+                                    <f7-card-content>
+                                        <h5 class="small">Multipurpose Juice allows you to grow faster</h5>
+                                        <p class="text-mute small">By Anand Mangal</p>
+                                    </f7-card-content>
+                                    <a href="" class="button button-fill color-pink button-fab button-round"><i class="material-icons md-18">arrow_forward</i></a>
+                                </f7-card>
+                            </f7-swiper-slide>
+                            <f7-swiper-slide>
+                                <f7-card class="bg-dark text-white">
+                                    <figure class="background" style="background-image: url('img/fresh-orange-juice.jpg')">
+                                    </figure>
+                                    <f7-card-content>
+                                        <h5 class="small">Multipurpose Juice allows you to grow faster</h5>
+                                        <p class="text-mute small">By Anand Mangal</p>
+                                    </f7-card-content>
+                                    <a href="" class="button button-fill color-pink button-fab button-round"><i class="material-icons md-18">arrow_forward</i></a>
+                                </f7-card>
+                            </f7-swiper-slide>
+                            <f7-swiper-slide>
+                                <f7-card class="bg-dark text-white">
+                                    <figure class="background" style="background-image: url('img/fresh-orange-juice.jpg')">
+                                    </figure>
+                                    <f7-card-content>
+                                        <h5 class="small">Multipurpose Juice allows you to grow faster</h5>
+                                        <p class="text-mute small">By Anand Mangal</p>
+                                    </f7-card-content>
+                                    <a href="" class="button button-fill color-pink button-fab button-round"><i class="material-icons md-18">arrow_forward</i></a>
+                                </f7-card>
+                            </f7-swiper-slide>
+                            <f7-swiper-slide>
+                                <f7-card class="bg-dark text-white">
+                                    <figure class="background" style="background-image: url('img/fresh-orange-juice.jpg')">
+                                    </figure>
+                                    <f7-card-content>
+                                        <h5 class="small">Multipurpose Juice allows you to grow faster</h5>
+                                        <p class="text-mute small">By Anand Mangal</p>
+                                    </f7-card-content>
+                                    <a href="" class="button button-fill color-pink button-fab button-round"><i class="material-icons md-18">arrow_forward</i></a>
+                                </f7-card>
+                            </f7-swiper-slide>
+                            <f7-swiper-slide>
+                                <f7-card class="bg-dark text-white">
+                                    <figure class="background" style="background-image: url('img/fresh-orange-juice.jpg')">
+                                    </figure>
+                                    <f7-card-content>
+                                        <h5 class="small">Multipurpose Juice allows you to grow faster</h5>
+                                        <p class="text-mute small">By Anand Mangal</p>
+                                    </f7-card-content>
+                                    <a href="" class="button button-fill color-pink button-fab button-round"><i class="material-icons md-18">arrow_forward</i></a>
+                                </f7-card>
+                            </f7-swiper-slide>
+                        </f7-swiper>
+                    </f7-block>
+                </f7-tab>
+                <f7-tab id="tab-3" class="page-content tab">
+                    <f7-block-title>My Cart<br><small>3 Items</small></f7-block-title>
+                    <f7-list>
+                        <f7-list-item>
+                            <div class="row width-100">
+                                <div class="col-auto align-self-center ">
+                                    <button class="button color-red no-padding"><i class="material-icons">remove_circle</i></button>
+                                </div>
+                                <div class="col-20 align-self-center">
+                                    <figure class="product-image h-auto"><img src="img/apple.png" alt="" class="vm"></figure>
+                                </div>
+                                <div class="col align-self-center padding-left">
+                                    <a href="#" class="text-dark margin-bottom-half h6 d-block">Red Apple </a>
+                                    <h5 class="text-green font-weight-normal no-margin">$ 120<sup>.00</sup></h5>
+                                    <p class="text-secondary small text-mute no-margin">1.0 kg <span class="text-green margin-left-half">10% off</span></p>
+                                </div>
+                                <div class="col-auto align-self-center">
+                                    <div class="input-group input-group-sm">
+                                        <div class="input-group-prepend">
+                                            <button class="button no-padding color-grey" type="button"><i class="material-icons">remove</i></button>
+                                        </div>
+                                        <input type="text" class="form-control text-align-center width-35" placeholder="" value="1">
+                                        <div class="input-group-append">
+                                            <button class="button no-padding color-grey" type="button"><i class="material-icons">add</i></button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </f7-list-item>
+                        <f7-list-item>
+                            <div class="row width-100">
+                                <div class="col-auto align-self-center ">
+                                    <button class="button color-red no-padding"><i class="material-icons">remove_circle</i></button>
+                                </div>
+                                <div class="col-20 align-self-center">
+                                    <figure class="product-image h-auto"><img src="img/grapes.png" alt="" class="vm"></figure>
+                                </div>
+                                <div class="col align-self-center padding-left">
+                                    <a href="#" class="text-dark margin-bottom-half h6 d-block">green Grapes </a>
+                                    <h5 class="text-green font-weight-normal no-margin">$ 120<sup>.00</sup></h5>
+                                    <p class="text-secondary small text-mute no-margin">1.0 kg <span class="text-green margin-left-half">10% off</span></p>
+                                </div>
+                                <div class="col-auto align-self-center">
+                                    <div class="input-group input-group-sm">
+                                        <div class="input-group-prepend">
+                                            <button class="button no-padding color-grey" type="button"><i class="material-icons">remove</i></button>
+                                        </div>
+                                        <input type="text" class="form-control text-align-center width-35" placeholder="" value="1">
+                                        <div class="input-group-append">
+                                            <button class="button no-padding color-grey" type="button"><i class="material-icons">add</i></button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </f7-list-item>
+                        <f7-list-item>
+                            <div class="row width-100">
+                                <div class="col-auto align-self-center ">
+                                    <button class="button color-red no-padding"><i class="material-icons">remove_circle</i></button>
+                                </div>
+                                <div class="col-20 align-self-center">
+                                    <figure class="product-image h-auto"><img src="img/orange-2.png" alt="" class="vm"></figure>
+                                </div>
+                                <div class="col align-self-center padding-left">
+                                    <a href="#" class="text-dark margin-bottom-half h6 d-block">Orange </a>
+                                    <h5 class="text-green font-weight-normal no-margin">$ 120<sup>.00</sup></h5>
+                                    <p class="text-secondary small text-mute no-margin">1.0 kg <span class="text-green margin-left-half">10% off</span></p>
+                                </div>
+                                <div class="col-auto align-self-center">
+                                    <div class="input-group input-group-sm">
+                                        <div class="input-group-prepend">
+                                            <button class="button no-padding color-grey" type="button"><i class="material-icons">remove</i></button>
+                                        </div>
+                                        <input type="text" class="form-control text-align-center width-35" placeholder="" value="1">
+                                        <div class="input-group-append">
+                                            <button class="button no-padding color-grey" type="button"><i class="material-icons">add</i></button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </f7-list-item>
+
+                    </f7-list>
+                    <f7-block>
+                        <f7-card class="no-margin-bottom">
+                            <f7-card-content>
+                                <div class="row">
+                                    <div class="col-auto align-self-center">
+                                        <span class="button button-fill color-green">
+                                            <i class="material-icons">local_activity</i>
+                                        </span>
+                                    </div>
+                                    <div class="col padding-left">
+                                        <div class="list no-margin">
+                                            <ul class="no-border">
+                                                <li class="item-content item-input no-padding">
+                                                    <div class="item-inner no-padding-horizontal">
+                                                        <!-- "item-floating-label" class on item title -->
+                                                        <div class="item-title item-floating-label">Coupon Code</div>
+                                                        <div class="item-input-wrap">
+                                                            <input type="text" name="name" value="ADU00548DOU">
+                                                            <span class="input-clear-button"></span>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="col-auto align-self-center padding-left">
+                                        <button class="button button-fill color-pink"><i class="material-icons">arrow_forward</i></button>
+                                    </div>
+                                </div>
+                            </f7-card-content>
+                            <f7-card-content class="border-top-dashed">
+                                <div class="row ">
+                                    <div class="col-33">
+                                        <p class="text-secondary no-margin-top margin-bottom-half small">Sub Total</p>
+                                        <h5 class="no-margin">$360.00</h5>
+                                    </div>
+                                    <div class="col-33 text-align-center">
+                                        <p class="text-secondary no-margin-top margin-bottom-half small">Tax</p>
+                                        <h5 class="no-margin">$40.00</h5>
+                                    </div>
+                                    <div class="col-33 text-align-right">
+                                        <p class="text-secondary no-margin-top margin-bottom-half small">Discount</p>
+                                        <h5 class="no-margin">-$100.00</h5>
+                                    </div>
+                                </div>
+                            </f7-card-content>
+                        </f7-card>
+                        <f7-card class="no-margin-top border-top-dashed">
+                            <f7-card-content class="text-aling-center">
+                                <p class="text-secondary no-margin margin-bottom-half">Net Payable</p>
+                                <h3 class="no-margin">$400.00</h3>
+                                <br>
+                                <a href="/checkout/" class="button button-large button-raised button-round button-fill color-pink"><span>Checkout</span><i class="material-icons">arrow_forward</i></a>
+                            </f7-card-content>
+                        </f7-card>
+                    </f7-block>
+                </f7-tab>
+                <f7-tab id="tab-4" class="page-content tab">
+                    <f7-block-title>My Favorite<br><small>14 Items</small></f7-block-title>
+                    <f7-block>
+                        <div class="row">
+                            <div class="col-50 medium-33 desktop-25">
+                                <f7-card>
+                                    <f7-card-content>
+                                        <div class="row">
+                                            <div class="col">
+                                                <button class="button color-pink width-auto"><i class="material-icons md-18">favorite_outline</i></button>
+                                            </div>
+                                            <div class="col">
+                                                <div class="badge badge-success float-right margin-top-half">10% off</div>
+                                            </div>
+                                        </div>
+                                        <figure class="product-image"><img src="img/apple.png" alt="" class=""></figure>
+                                        <a href="/productdetails/" class="text-dark h5 margin-vertical">Red Apple </a>
+                                        <p class="text-secondary small no-margin">Imported from Simla</p>
+                                        <h5 class="text-green font-weight-normal no-margin">$ 120<sup>.00</sup></h5>
+                                        <p class="text-secondary small text-mute no-margin">1.0 kg</p>
+                                        <button class="button button-fill color-pink button-fab button-round"><i class="material-icons md-18">shopping_cart</i></button>
+                                    </f7-card-content>
+                                </f7-card>
+                            </div>
+                            <div class="col-50 medium-33 desktop-25">
+                                <f7-card>
+                                    <f7-card-content>
+                                        <div class="row">
+                                            <div class="col">
+                                                <button class="button color-pink width-auto"><i class="material-icons md-18">favorite_outline</i></button>
+                                            </div>
+                                            <div class="col">
+                                                <div class="badge badge-success float-right margin-top-half">10% off</div>
+                                            </div>
+                                        </div>
+                                        <figure class="product-image"><img src="img/grapes2.png" alt="" class=""></figure>
+                                        <a href="/productdetails/" class="text-dark h5 margin-vertical">Green Grapes</a>
+                                        <p class="text-secondary small no-margin">Chilled fresh</p>
+                                        <h5 class="text-green font-weight-normal no-margin">$ 100<sup>.00</sup></h5>
+                                        <p class="text-secondary small text-mute no-margin">1.0 kg</p>
+                                        <button class="button button-fill color-pink button-fab button-round"><i class="material-icons md-18">shopping_cart</i></button>
+                                    </f7-card-content>
+                                </f7-card>
+                            </div>
+                            <div class="col-50 medium-33 desktop-25">
+                                <f7-card>
+                                    <f7-card-content>
+                                        <div class="row">
+                                            <div class="col">
+                                                <button class="button color-pink width-auto"><i class="material-icons md-18">favorite_outline</i></button>
+                                            </div>
+                                            <div class="col">
+                                                <div class="badge badge-primary float-right">10% off</div>
+                                            </div>
+                                        </div>
+                                        <figure class="product-image"><img src="img/orange-2.png" alt="" class=""></figure>
+                                        <a href="/productdetails/" class="text-dark h5 margin-vertical">Orange</a>
+                                        <p class="text-secondary small no-margin">Sweet and Juicy</p>
+                                        <h5 class="text-green font-weight-normal no-margin">$ 120<sup>.00</sup></h5>
+                                        <p class="text-secondary small text-mute no-margin">1.0 kg</p>
+                                        <button class="button button-fill color-pink button-fab button-round"><i class="material-icons md-18">shopping_cart</i></button>
+                                    </f7-card-content>
+                                </f7-card>
+                            </div>
+                            <div class="col-50 medium-33 desktop-25">
+                                <f7-card>
+                                    <f7-card-content>
+                                        <div class="row">
+                                            <div class="col">
+                                                <button class="button color-pink width-auto"><i class="material-icons md-18">favorite_outline</i></button>
+                                            </div>
+                                            <div class="col">
+                                                <div class="badge badge-success float-right margin-top-half">10% off</div>
+                                            </div>
+                                        </div>
+                                        <figure class="product-image"><img src="img/orange-small.png" alt="" class=""></figure>
+                                        <a href="/productdetails/" class="text-dark h5 margin-vertical">Lemon</a>
+                                        <p class="text-secondary small no-margin">Most Demanded</p>
+                                        <h5 class="text-green font-weight-normal no-margin">$ 120<sup>.00</sup></h5>
+                                        <p class="text-secondary small text-mute no-margin">1.0 kg</p>
+                                        <button class="button button-fill color-pink button-fab button-round"><i class="material-icons md-18">shopping_cart</i></button>
+                                    </f7-card-content>
+                                </f7-card>
+                            </div>
+                            <div class="col-50 medium-33 desktop-25">
+                                <f7-card>
+                                    <f7-card-content>
+                                        <div class="row">
+                                            <div class="col">
+                                                <button class="button color-pink width-auto"><i class="material-icons md-18">favorite_outline</i></button>
+                                            </div>
+                                            <div class="col">
+                                                <div class="badge badge-success float-right margin-top-half">10% off</div>
+                                            </div>
+                                        </div>
+                                        <figure class="product-image"><img src="img/apple.png" alt="" class=""></figure>
+                                        <a href="/productdetails/" class="text-dark h5 margin-vertical">Red Apple </a>
+                                        <p class="text-secondary small no-margin">Imported from Simla</p>
+                                        <h5 class="text-green font-weight-normal no-margin">$ 120<sup>.00</sup></h5>
+                                        <p class="text-secondary small text-mute no-margin">1.0 kg</p>
+                                        <button class="button button-fill color-pink button-fab button-round"><i class="material-icons md-18">shopping_cart</i></button>
+                                    </f7-card-content>
+                                </f7-card>
+                            </div>
+                            <div class="col-50 medium-33 desktop-25">
+                                <f7-card>
+                                    <f7-card-content>
+                                        <div class="row">
+                                            <div class="col">
+                                                <button class="button color-pink width-auto"><i class="material-icons md-18">favorite_outline</i></button>
+                                            </div>
+                                            <div class="col">
+                                                <div class="badge badge-success float-right margin-top-half">10% off</div>
+                                            </div>
+                                        </div>
+                                        <figure class="product-image"><img src="img/grapes2.png" alt="" class=""></figure>
+                                        <a href="/productdetails/" class="text-dark h5 margin-vertical">Green Grapes</a>
+                                        <p class="text-secondary small no-margin">Chilled fresh</p>
+                                        <h5 class="text-green font-weight-normal no-margin">$ 100<sup>.00</sup></h5>
+                                        <p class="text-secondary small text-mute no-margin">1.0 kg</p>
+                                        <button class="button button-fill color-pink button-fab button-round"><i class="material-icons md-18">shopping_cart</i></button>
+                                    </f7-card-content>
+                                </f7-card>
+                            </div>
+                        </div>
+                    </f7-block>
+                    <f7-block class="block text-align-center">
+                        <div class="row">
+                            <div class="col-100">
+                                <div class="button button-fill button-round button-large">
+                                    <div class="btn-loader">
+                                        <div></div>
+                                        <div></div>
+                                        <div></div>
+                                        <div></div>
+                                    </div>
+                                    <h6 class="display-inline-block text-align-left vm no-margin">Loading Content<br><small class="text-mute">Please wait for a while...</small></h6>
+                                </div>
+                            </div>
+                        </div>
+                    </f7-block>
+                </f7-tab>
+                <f7-tab id="tab-5" class="page-content tab">
+                    <f7-block class="text-align-center">
+                        <div class="figure-profile margin-vertical">
+                            <figure><img src="img/user1.png" alt=""></figure>
+                        </div>
+                        <h2 class="no-margin">Ammy Jahnson</h2>
+                        <p class="text-secondary no-margin">Sydney, Australia</p>
+                    </f7-block>
+                    <f7-block>
+                        <f7-card>
+                            <f7-card-content>
+                                <div class="row">
+                                    <span class="button button-fill button-large color-pink padding-horizontal width-auto">
+                                        <i class="material-icons">account_balance_wallet</i>
+                                    </span>
+                                    <div class="col text-align-center">
+                                        <p class="text-secondary no-margin-top margin-bottom-half">Balance Available</p>
+                                        <h3 class="text-dark no-margin">$2585.00</h3>
+                                    </div>
+                                    <button class="button button-raised button-round button-fill color-pink  width-auto align-self-center"><i class="material-icons">add</i></button>
+                                </div>
+                            </f7-card-content>
+                        </f7-card>
+                    </f7-block>
+                    <f7-block-title>Friends</f7-block-title>
+                    <f7-block>
+                        <figure class="avatar avatar-50">
+                            <img src="img/user2.png" alt="">
+                        </figure>
+                        <figure class="avatar avatar-50">
+                            <img src="img/user3.png" alt="">
+                        </figure>
+                        <figure class="avatar avatar-50">
+                            <img src="img/user4.png" alt="">
+                        </figure>
+                        <figure class="avatar avatar-50">
+                            <img src="img/user1.png" alt="">
+                        </figure>
+                        <div class="avatar avatar-50">
+                            <a class="d-block" href="">
+                                <h6 class="no-margin margin-top">46</h6>
+                                <p class="small text-secondary no-margin">More</p>
+                            </a>
+                        </div>
+                    </f7-block>
+                    <f7-block-title>Contact Information</f7-block-title>
+                    <f7-block>
+                        <div class="row">
+                            <div class="col-30 text-secondary font-weight-normal">Email</div>
+                            <div class="col-70">ammyjohnson@maxartkiller.com</div>
+                            <div class="col-30 text-secondary font-weight-normal">Phone</div>
+                            <div class="col-70">55 5555 555555 55</div>
+                        </div>
+                    </f7-block>
+                    <f7-block-title>Address</f7-block-title>
+                    <f7-block>
+                        <p class="no-margin">58, Lajpat Nagar,<br>Holand Street four,<br>Sydney - 25468<br>Australia</p>
+                    </f7-block>
+                </f7-tab>
+            </f7-tabs>
+
+        </f7-page>
+    </template>
+    <script>
+        function chart1() {
+            /* chart js */
+            var config = {
+                type: 'line',
+                data: {
+                    labels: ['January', 'February', 'March', 'April', 'May'],
+                    datasets: [{
+                        label: 'My First dataset',
+                        backgroundColor: '#FF0068',
+                        borderColor: '#FF0068',
+                        data: [
+                            randomScalingFactor(),
+                            randomScalingFactor(),
+                            randomScalingFactor(),
+                            randomScalingFactor(),
+                            randomScalingFactor()
+                        ],
+                        fill: false,
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    legend: {
+                        display: false
+                    },
+                    title: {
+                        display: false,
+                        text: 'Chart.js Line Chart'
+                    },
+                    tooltips: {
+                        mode: 'index',
+                        intersect: false,
+                    },
+                    hover: {
+                        mode: 'nearest',
+                        intersect: true
+                    },
+                    scales: {
+                        xAxes: [{
+                            display: true,
+                            scaleLabel: {
+                                display: false,
+                                labelString: 'Month'
+                            }
+                        }],
+                        yAxes: [{
+                            display: true,
+                            scaleLabel: {
+                                display: false,
+                                labelString: 'Value'
+                            }
+                        }]
+                    }
+                }
+            };
+
+
+            var ctx = document.getElementById('chartcanvas').getContext('2d');
+            window.myLine = new Chart(ctx, config);
+        }
+
+    </script>
+
+
+
+    <!-- Cordova -->
+    <!--
+  <script src="cordova.js"></script>
+  -->
+
+    <!-- Framework7 library -->
+    <script src="libs/framework7/js/framework7.bundle.min.js"></script>
+
+    <!-- Vue -->
+    <script src="libs/vue/vue.min.js"></script>
+
+    <!-- Framework7-Vue plugin -->
+    <script src="libs/framework7-vue/framework7-vue.bundle.min.js"></script>
+
+    <!-- chart js -->
+    <script src="js/chartjs/Chart.min.js"></script>
+    <script src="js/chartjs/utils.js"></script>
+
+    <!-- Your custom app scripts -->
+    <script src="js/app.js"></script>
+</body>
+
+</html>

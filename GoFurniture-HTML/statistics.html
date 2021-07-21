@@ -1,0 +1,728 @@
+<!doctype html>
+<html lang="en" class="brown-theme">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, viewport-fit=cover, user-scalable=no">
+    <meta name="description" content="">
+    <meta name="author" content="Maxartkiller">
+
+    <title>Stats · GoFurniture</title>
+
+    <!-- Material design icons CSS -->
+    <link rel="stylesheet" href="vendor/materializeicon/material-icons.css">
+
+    <!-- Roboto fonts CSS -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet">
+
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap-4.4.1/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Swiper CSS -->
+    <link href="vendor/swiper/css/swiper.min.css" rel="stylesheet">
+
+    <!-- Chosen multiselect CSS -->
+    <link href="vendor/chosen_v1.8.7/chosen.min.css" rel="stylesheet">
+
+    <!-- nouislider CSS -->
+    <link href="vendor/nouislider/nouislider.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="css/style.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="row no-gutters vh-100 loader-screen">
+        <div class="col align-self-center text-white text-center">
+            <img src="img/logo.png" alt="logo">
+            <h1><span class="font-weight-light">Go</span>Furniture</h1>
+            <div class="laoderhorizontal"><div></div><div></div><div></div><div></div></div>
+        </div>
+    </div>
+    <div class="sidebar">
+        <div class="text-center">
+            <div class="figure-menu shadow">
+                <figure><img src="img/user1.png" alt=""></figure>
+            </div>
+            <h5 class="mb-1 ">Ammy Jahnson</h5>
+            <p class="text-mute small">Sydney, Australia</p>
+        </div>
+        <br>
+        <div class="row mx-0">
+            <div class="col">
+                <div class="card mb-3 border-0 shadow-sm bg-template-light">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col">
+                                <p class="text-secondary small mb-0">Balance Available</p>
+                                <h6 class="text-dark my-0">$2585.00</h6>
+                            </div>
+                            <div class="col-auto">
+                                <button class="btn btn-default button-rounded-36 shadow"><i class="material-icons">add</i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <h5 class="subtitle text-uppercase"><span>Menu</span></h5>
+                <div class="list-group main-menu">
+                    <a href="index.html" class="list-group-item list-group-item-action active">Store</a>
+                    <a href="notification.html" class="list-group-item list-group-item-action">Notification <span class="badge badge-dark text-white">2</span></a>
+                    <a href="all-products.html" class="list-group-item list-group-item-action">All Products</a>
+                    <a href="my-order.html" class="list-group-item list-group-item-action">My Order</a>
+                    <a href="profile.html" class="list-group-item list-group-item-action">My Profile</a>
+                    <a href="controls.html" class="list-group-item list-group-item-action">Pages Controls <span class="badge badge-light ml-2">Check</span></a>
+                    <a href="setting.html" class="list-group-item list-group-item-action">Settings</a>
+                    <a href="login.html" class="list-group-item list-group-item-action mt-4">Logout</a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div class="wrapper">
+        <div class="header">
+            <div class="row no-gutters">
+                <div class="col-auto">
+                    <button class="btn  btn-link text-dark menu-btn"><img src="img/menu.png" alt=""><span class="new-notification"></span></button>
+                </div>
+                <div class="col text-center"><img src="img/logo-header.png" alt="" class="header-logo"></div>
+                <div class="col-auto">
+                    <a href="profile.html" class="btn  btn-link text-dark"><i class="material-icons">account_circle</i></a>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <input type="text" class="form-control form-control-lg search my-3" placeholder="Search">
+
+            <div class="subtitle h6 mb-3">
+                <div class="d-inline-block">
+                    This Month<br>
+                    <p class="small text-mute">1/07/2019 - 28-07-2019</p>
+                </div>
+            </div>
+            <div class="card mb-4 border-0 shadow-sm">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-auto">
+                            <span class="btn btn-default p-3">
+                                <i class="material-icons">account_balance_wallet</i>
+                            </span>
+                        </div>
+                        <div class="col pl-0">
+                            <p class="text-secondary mb-0">Balance Available</p>
+                            <h3 class="text-dark my-0">$2585.00</h3>
+                        </div>
+                        <div class="col-auto">
+                            <button class="btn btn-default button-rounded-54 shadow"><i class="material-icons">add</i></button>
+                        </div>
+                    </div>
+                    <div class="row mt-4">
+                        <div class="col-12">
+                            <canvas id="canvas"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-6">
+                    <div class="card mb-3 border-0 shadow-sm">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-auto align-self-center pr-1">
+                                    <span class="btn btn-success button-rounded-26">
+                                        <i class="material-icons md-18 text-mute">card_giftcard</i>
+                                    </span>
+                                </div>
+                                <div class="col pl-1">
+                                    <p class="text-secondary mb-0 small">Total Saving</p>
+                                    <h6 class="text-dark my-0">$585.00</h6>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="card mb-3 border-0 shadow-sm">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-auto align-self-center pr-1">
+                                    <span class="btn btn-warning button-rounded-26">
+                                        <i class="material-icons md-18 text-mute">payment</i>
+                                    </span>
+                                </div>
+                                <div class="col pl-1">
+                                    <p class="text-secondary mb-0 small">Expense</p>
+                                    <h6 class="text-dark my-0">$1585.00</h6>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <h6 class="subtitle">Categories</h6>
+            <div class="row">
+                <!-- Swiper -->
+                <div class="swiper-container small-slide">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <div class="card shadow-sm border-0">
+                                <div class="card-body">
+                                    <div class="row no-gutters h-100">
+                                        <img src="img/sofa.png" alt="" class="small-slide-right">
+                                        <div class="col-8">
+                                            <button class="btn btn-sm btn-link p-0"><i class="material-icons md-18">favorite_outline</i></button>
+                                            <a href="#" class="text-dark mb-1 mt-2 h6 d-block">Sofa</a>
+                                            <p class="text-secondary small">Colored, Office, Woolen</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="card shadow-sm border-0">
+                                <div class="card-body">
+                                    <div class="row no-gutters h-100">
+                                        <img src="img/chair-small.png" alt="" class="small-slide-right">
+                                        <div class="col-8">
+                                            <button class="btn btn-sm btn-link p-0"><i class="material-icons md-18">favorite</i></button>
+                                            <a href="#" class="text-dark mb-1 mt-2 h6 d-block">Chair </a>
+                                            <p class="text-secondary small">Support, Back, Hand</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="card shadow-sm border-0">
+                                <div class="card-body">
+                                    <div class="row no-gutters h-100">
+                                        <img src="img/table.png" alt="" class="small-slide-right">
+                                        <div class="col-9">
+                                            <button class="btn btn-sm btn-link p-0"><i class="material-icons md-18">favorite_outline</i></button>
+                                            <a href="#" class="text-dark mb-1 mt-2 h6 d-block">Table</a>
+                                            <p class="text-secondary small">Office, Home, General</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="card shadow-sm border-0">
+                                <div class="card-body">
+                                    <div class="row no-gutters h-100">
+                                        <img src="img/sofa.png" alt="" class="small-slide-right">
+                                        <div class="col-8">
+                                            <button class="btn btn-sm btn-link p-0"><i class="material-icons md-18">favorite_outline</i></button>
+                                            <a href="#" class="text-dark mb-1 mt-2 h6 d-block">Sofa</a>
+                                            <p class="text-secondary small">Colored, Office, Woolen</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="card shadow-sm border-0">
+                                <div class="card-body">
+                                    <div class="row no-gutters h-100">
+                                        <img src="img/chair-small.png" alt="" class="small-slide-right">
+                                        <div class="col-8">
+                                            <button class="btn btn-sm btn-link p-0"><i class="material-icons md-18">favorite</i></button>
+                                            <a href="#" class="text-dark mb-1 mt-2 h6 d-block">Chair </a>
+                                            <p class="text-secondary small">Support, Back, Hand</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="card shadow-sm border-0">
+                                <div class="card-body">
+                                    <div class="row no-gutters h-100">
+                                        <img src="img/table.png" alt="" class="small-slide-right">
+                                        <div class="col-9">
+                                            <button class="btn btn-sm btn-link p-0"><i class="material-icons md-18">favorite_outline</i></button>
+                                            <a href="#" class="text-dark mb-1 mt-2 h6 d-block">Table</a>
+                                            <p class="text-secondary small">Office, Home, General</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="card shadow-sm border-0">
+                                <div class="card-body">
+                                    <div class="row no-gutters h-100">
+                                        <img src="img/sofa.png" alt="" class="small-slide-right">
+                                        <div class="col-8">
+                                            <button class="btn btn-sm btn-link p-0"><i class="material-icons md-18">favorite_outline</i></button>
+                                            <a href="#" class="text-dark mb-1 mt-2 h6 d-block">Sofa</a>
+                                            <p class="text-secondary small">Colored, Office, Woolen</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="card shadow-sm border-0">
+                                <div class="card-body">
+                                    <div class="row no-gutters h-100">
+                                        <img src="img/chair-small.png" alt="" class="small-slide-right">
+                                        <div class="col-8">
+                                            <button class="btn btn-sm btn-link p-0"><i class="material-icons md-18">favorite</i></button>
+                                            <a href="#" class="text-dark mb-1 mt-2 h6 d-block">Chair </a>
+                                            <p class="text-secondary small">Support, Back, Hand</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="card shadow-sm border-0">
+                                <div class="card-body">
+                                    <div class="row no-gutters h-100">
+                                        <img src="img/table.png" alt="" class="small-slide-right">
+                                        <div class="col-9">
+                                            <button class="btn btn-sm btn-link p-0"><i class="material-icons md-18">favorite_outline</i></button>
+                                            <a href="#" class="text-dark mb-1 mt-2 h6 d-block">Table</a>
+                                            <p class="text-secondary small">Office, Home, General</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <h6 class="subtitle">Product Budget</h6>
+            <div class="row">
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="card shadow-sm border-0 mb-4">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-2 col-sm-3 col-md-4 col-lg-3 pr-0 align-self-center">
+                                    <figure class="product-image my-0"><img src="img/sofa2.png" alt="" class=""></figure>
+                                </div>
+                                <div class="col align-self-center">
+                                    <div class="text-dark mb-1 h6 d-block">Sofa
+                                        <div class="float-right">
+                                            <div class="badge badge-success d-inline-block ml-2"><small>10% off</small></div>
+                                            <span class="text-secondary small text-mute mb-0 ml-2">1.0 kg</span>
+                                        </div>
+                                    </div>
+                                    <div class="progress progress-sm mt-2">
+                                        <div class="progress-bar bg-danger" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="card shadow-sm border-0 mb-4">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-2 col-sm-3 col-md-4 col-lg-3 pr-0 align-self-center">
+                                    <figure class="product-image my-0"><img src="img/table2.png" alt="" class=""></figure>
+                                </div>
+                                <div class="col align-self-center">
+                                    <div class="text-dark mb-1 h6 d-block">Antique Table
+                                        <div class="float-right">
+                                            <div class="badge badge-success d-inline-block ml-2"><small>15% off</small></div>
+                                            <span class="text-secondary small text-mute mb-0 ml-2">1.0 kg</span>
+                                        </div>
+                                    </div>
+                                    <div class="progress progress-sm mt-2">
+                                        <div class="progress-bar bg-success" role="progressbar" style="width: 35%" aria-valuenow="35" aria-valuemin="0" aria-valuemax="100"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="card shadow-sm border-0 mb-4">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-2 col-sm-3 col-md-4 col-lg-3 pr-0 align-self-center">
+                                    <figure class="product-image my-0"><img src="img/redsofa2.png" alt="" class=""></figure>
+                                </div>
+                                <div class="col align-self-center">
+                                    <div class="text-dark mb-1 h6 d-block">King Sofa
+                                        <div class="float-right">
+                                            <div class="badge badge-success d-inline-block ml-2"><small>15% off</small></div>
+                                            <span class="text-secondary small text-mute mb-0 ml-2">1.0 kg</span>
+                                        </div>
+                                    </div>
+                                    <div class="progress progress-sm mt-2">
+                                        <div class="progress-bar bg-warning" role="progressbar" style="width: 60%" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <h6 class="subtitle">News Updates</h6>
+            <div class="row">
+                <!-- Swiper -->
+                <div class="swiper-container news-slide">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <div class="card shadow-sm border-0 bg-dark text-white">
+                                <figure class="background">
+                                    <img src="img/wall.jpg" alt="">
+                                </figure>
+                                <div class="card-body">
+                                    <a href="" class="btn btn-default button-rounded-36 shadow-sm float-bottom-right"><i class="material-icons md-18">arrow_forward</i></a>
+                                    <h5 class="small">Multipurpose Furniture allows you to grow faster</h5>
+                                    <p class="text-mute small">By Anand Mangal</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="card shadow-sm border-0 bg-dark text-white">
+                                <figure class="background">
+                                    <img src="img/kitchen.jpg" alt="">
+                                </figure>
+                                <div class="card-body">
+                                    <a href="" class="btn btn-default button-rounded-36 shadow-sm float-bottom-right"><i class="material-icons md-18">arrow_forward</i></a>
+                                    <h5 class="small">Multipurpose Furniture allows you to grow faster</h5>
+                                    <p class="text-mute small">By Anand Mangal</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="card shadow-sm border-0 bg-dark text-white">
+                                <figure class="background">
+                                    <img src="img/wall.jpg" alt="">
+                                </figure>
+                                <div class="card-body">
+                                    <a href="" class="btn btn-default button-rounded-36 shadow-sm float-bottom-right"><i class="material-icons md-18">arrow_forward</i></a>
+                                    <h5 class="small">Multipurpose Furniture allows you to grow faster</h5>
+                                    <p class="text-mute small">By Anand Mangal</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="card shadow-sm border-0 bg-dark text-white">
+                                <figure class="background">
+                                    <img src="img/kitchen.jpg" alt="">
+                                </figure>
+                                <div class="card-body">
+                                    <a href="" class="btn btn-default button-rounded-36 shadow-sm float-bottom-right"><i class="material-icons md-18">arrow_forward</i></a>
+                                    <h5 class="small">Multipurpose Furniture allows you to grow faster</h5>
+                                    <p class="text-mute small">By Anand Mangal</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="card shadow-sm border-0 bg-dark text-white">
+                                <figure class="background">
+                                    <img src="img/wall.jpg" alt="">
+                                </figure>
+                                <div class="card-body">
+                                    <a href="" class="btn btn-default button-rounded-36 shadow-sm float-bottom-right"><i class="material-icons md-18">arrow_forward</i></a>
+                                    <h5 class="small">Multipurpose Furniture allows you to grow faster</h5>
+                                    <p class="text-mute small">By Anand Mangal</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="card shadow-sm border-0 bg-dark text-white">
+                                <figure class="background">
+                                    <img src="img/kitchen.jpg" alt="">
+                                </figure>
+                                <div class="card-body">
+                                    <a href="" class="btn btn-default button-rounded-36 shadow-sm float-bottom-right"><i class="material-icons md-18">arrow_forward</i></a>
+                                    <h5 class="small">Multipurpose Furniture allows you to grow faster</h5>
+                                    <p class="text-mute small">By Anand Mangal</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Add Pagination -->
+                    <div class="swiper-pagination"></div>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid bg-success text-white mb-3">
+            <div class="row">
+                <div class="container">
+                    <div class="row  py-4 ">
+                        <div class="col">
+                            <h1 class="text-uppercase mb-3">20% OFF Season Sale</h1>
+                            <p class="mb-3">Use Coupan Code<br><span class="text-dark">DFR0020</span></p>
+                        </div>
+                        <div class="col-5 col-md-3 col-lg-2 col-xl-2">
+                            <img src="img/hanging2.png" alt="" class="mw-100 mt-3">
+                        </div>
+                        <div class="w-100"></div>
+                        <div class="col">
+                            <p>Get the all new furnitures at very low price</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer">
+            <div class="no-gutters">
+                <div class="col-auto mx-auto">
+                    <div class="row no-gutters justify-content-center">
+                        <div class="col-auto">
+                            <a href="index.html" class="btn btn-link-default ">
+                                <i class="material-icons">store_mall_directory</i>
+                            </a>
+                        </div>
+                        <div class="col-auto">
+                            <a href="statistics.html" class="btn btn-link-default active">
+                                <i class="material-icons">insert_chart_outline</i>
+                            </a>
+                        </div>
+                        <div class="col-auto">
+                            <a href="cart.html" class="btn btn-default shadow centerbutton">
+                                <i class="material-icons">local_mall</i>
+                            </a>
+                        </div>
+                        <div class="col-auto">
+                            <a href="favorite-products.html" class="btn btn-link-default">
+                                <i class="material-icons">favorite</i>
+                            </a>
+                        </div>
+                        <div class="col-auto">
+                            <a href="profile.html" class="btn btn-link-default">
+                                <i class="material-icons">account_circle</i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="filter">
+        <button class="btn btn-default filter-btn shadow"><i class="material-icons">filter_list</i></button>
+        <div class="container filters-container">
+            <div class="subtitle h6">
+                <div class="d-inline-block">
+                    Filter Criteria<br>
+                    <p class="small text-mute">2154 products</p>
+                </div>
+            </div>
+            <hr>
+            <div class="form-group">
+                <label class="form-control-lable">
+                    Select Price Range
+                </label>
+                <br>
+                <div id="rangeslider" class="mt-2"></div>
+            </div>
+            <div class="form-group float-label pt-0">
+                <div class="row">
+                    <div class="col">
+                        <input type="number" min="0" max="500" value="100" step="1" id="input-select" class="form-control">
+                    </div>
+                    <div class="col-auto pt-2"> to </div>
+                    <div class="col">
+                        <input type="number" min="0" max="500" value="100" step="1" id="input-number" class="form-control">
+                    </div>
+                </div>
+            </div>
+            <div class="form-group float-label active">
+                <select class="form-control chosen" multiple>
+                    <optgroup label="Sofa">
+                        <option>King Sofa</option>
+                        <option>Rajpuri</option>
+                        <option>Sofa</option>
+                    </optgroup>
+                    <optgroup label="Chair">
+                        <option>Office Chair</option>
+                        <option>General</option>
+                    </optgroup>
+                    <optgroup label="Tables">
+                        <option>General</option>
+                        <option>Kitchen</option>
+                        <option>Office</option>
+                    </optgroup>
+                </select>
+                <label class="form-control-label">Select Fruite</label>
+            </div>
+            <div class="form-group float-label">
+                <input type="text" class="form-control">
+                <label class="form-control-label">Keyword</label>
+            </div>
+
+            <div class="form-group float-label active">
+                <select class="form-control chosen">
+                    <option>10% </option>
+                    <option>30%</option>
+                    <option>50%</option>
+                    <option>80%</option>
+                </select>
+                <label class="form-control-label">Offer Discount</label>
+            </div>
+
+            <br>
+            <button class="btn btn-light btn-rounded btn-block">Search</button>
+            <br>
+
+        </div>
+    </div>
+
+    <!-- jquery, popper and bootstrap js -->
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="vendor/bootstrap-4.4.1/js/bootstrap.min.js"></script>
+
+    <!-- swiper js -->
+    <script src="vendor/swiper/js/swiper.min.js"></script>
+
+    <!-- nouislider js -->
+    <script src="vendor/nouislider/nouislider.min.js"></script>
+
+    <!-- chart js -->
+    <script src="vendor/chartjs/Chart.min.js"></script>
+    <script src="vendor/chartjs/utils.js"></script>
+
+    <!-- chosen multiselect js -->
+    <script src="vendor/chosen_v1.8.7/chosen.jquery.min.js"></script>
+
+    <!-- template custom js -->
+    <script src="js/main.js"></script>
+
+    <!-- page level script -->
+    <script>
+        $(window).on('load', function() {
+            var swiper = new Swiper('.small-slide', {
+                slidesPerView: 'auto',
+                spaceBetween: 0,
+            });
+
+            var swiper = new Swiper('.news-slide', {
+                slidesPerView: 5,
+                spaceBetween: 0,
+                pagination: {
+                    el: '.swiper-pagination',
+                },
+                breakpoints: {
+                    1024: {
+                        slidesPerView: 4,
+                        spaceBetween: 0,
+                    },
+                    768: {
+                        slidesPerView: 3,
+                        spaceBetween: 0,
+                    },
+                    640: {
+                        slidesPerView: 2,
+                        spaceBetween: 0,
+                    },
+                    320: {
+                        slidesPerView: 2,
+                        spaceBetween: 0,
+                    }
+                }
+            });
+
+            /* range picker for filter */
+            var html5Slider = document.getElementById('rangeslider');
+            noUiSlider.create(html5Slider, {
+                start: [0, 100],
+                connect: true,
+                range: {
+                    'min': 0,
+                    'max': 500
+                }
+            });
+
+            var inputNumber = document.getElementById('input-number');
+            var select = document.getElementById('input-select');
+
+            html5Slider.noUiSlider.on('update', function(values, handle) {
+                var value = values[handle];
+
+                if (handle) {
+                    inputNumber.value = value;
+                } else {
+                    select.value = Math.round(value);
+                }
+            });
+            select.addEventListener('change', function() {
+                html5Slider.noUiSlider.set([this.value, null]);
+            });
+            inputNumber.addEventListener('change', function() {
+                html5Slider.noUiSlider.set([null, this.value]);
+            });
+
+            /* chosen select*/
+            $(".chosen").chosen();
+        });
+
+        /* chart js */
+        var MONTHS = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+        var config = {
+            type: 'line',
+            data: {
+                labels: ['January', 'February', 'March', 'April', 'May'],
+                datasets: [{
+                    label: 'My First dataset',
+                    backgroundColor: '#805433',
+                    borderColor: '#FFC400',
+                    data: [
+                        randomScalingFactor(),
+                        randomScalingFactor(),
+                        randomScalingFactor(),
+                        randomScalingFactor(),
+                        randomScalingFactor()
+                    ],
+                    fill: false,
+                }]
+            },
+            options: {
+                responsive: true,
+                legend: {
+                    display: false
+                },
+                title: {
+                    display: false,
+                    text: 'Chart.js Line Chart'
+                },
+                tooltips: {
+                    mode: 'index',
+                    intersect: false,
+                },
+                hover: {
+                    mode: 'nearest',
+                    intersect: true
+                },
+                scales: {
+                    xAxes: [{
+                        display: true,
+                        scaleLabel: {
+                            display: false,
+                            labelString: 'Month'
+                        }
+                    }],
+                    yAxes: [{
+                        display: true,
+                        scaleLabel: {
+                            display: false,
+                            labelString: 'Value'
+                        }
+                    }]
+                }
+            }
+        };
+
+        window.onload = function() {
+            var ctx = document.getElementById('canvas').getContext('2d');
+            window.myLine = new Chart(ctx, config);
+        };
+
+    </script>
+
+</body>
+
+</html>
