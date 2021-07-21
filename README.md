@@ -13,8 +13,13 @@ Template preview link: http://maxartkiller.com/gomobileux-multipurpose-mobile-ht
 This pack includes below folders and Items:
 - DOCUMENT: Quick overview document for HTML folder strucure
 - GoFruite-HTML- HTML files for GoFruit mobile application pages
-- GoMobileUX-F7 : Angular 8 starter kit for quick start project
+- PNG > PNG files for preview
+- ADOBE XD> Adobe XD file for GoFruit mobile application UI design screens
 - GoMobileUX-Angular-Starterkit : Angular 8 starter kit for quick start project
+- GoMobileUXF7-Vue-StarterKit : Framework7 vue js project starter kit
+
+Page Size: 
+Adobe XD file design on 375x812 resolution, Size varies as per screen length.
 
 
 Font Family Used in this files is/are:
