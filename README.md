@@ -8,7 +8,7 @@ A stop for creative UI designs and products.
 
 ==============================================================
 
-Template preview link: http://maxartkiller.com/gomobileux-multipurpose-mobile-html-template/
+Template preview link: https://maxartkiller.com/gomobileux-multipurpose-mobile-html-template/
 
 This pack includes below folders and Items:
 - DOCUMENT: Quick overview document for HTML folder strucure
